@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        android:fillViewport="true">
+
+
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:gravity="center_vertical"
+            android:background="@color/background">
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="3dp"
+                android:background="@color/options_toggle"
+                android:visibility="visible"/>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@id/trappedRowSituation1"
+                android:background="@android:color/background_light"
+                android:layout_gravity="center"
+                android:clickable="true">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="2"
+                    android:columnCount="1"
+                    android:clickable="false"
+                    android:layout_weight="1"
+                    >
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="You're trapped"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:textColor="#010101"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20dp"
+                        android:singleLine="false"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="in Arena"
+                        android:id="@+id/trappedTextViewEquipment1"
+                        android:textColor="#ffc269"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20dp"/>
+
+            </GridLayout>
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="2"
+                    android:useDefaultMargins="false"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:columnCount="1"
+                    android:background="@android:color/background_light">
+
+                <View
+                        android:layout_width="@dimen/divider_size"
+                        android:layout_height="34dp"
+                        android:background="@color/background"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:layout_rowSpan="2"
+                        android:layout_gravity="center_vertical"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/active"
+                        android:id="@+id/trappedTextArenaActive"
+                        android:singleLine="false"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:textColor="#00c435"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/custom"
+                        android:id="@+id/trappedTextArenaCustom"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"/>
+
+            </GridLayout>
+
+        </TableRow>
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/options_toggle"
+                android:visibility="gone"
+                android:focusableInTouchMode="false"
+                android:id="@id/trappedRowArena2">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="3"
+                    android:columnCount="2"
+                    android:id="@id/trappedSwitchArenaCustom"
+                    android:focusableInTouchMode="false">
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customised"
+                        android:id="@+id/trappedSwitchArenaCustomised"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:textColor="@android:color/black"
+                        />
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/trappedEditArena"
+                        android:layout_column="0"
+                        android:layout_row="2"
+                        android:hint="in Arena"
+                        android:layout_columnSpan="2"
+                        android:textSize="15dp"/>
+
+            </GridLayout>
+
+        </TableRow>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/arrow_down_float"
+                android:background="@color/options_toggle"
+                android:contentDescription="@string/arrow"/>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/divider_size"
+                android:background="@color/background"
+                android:visibility="visible"/>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@id/trappedRowSituation1"
+                android:background="@android:color/background_light"
+                android:visibility="visible">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="2"
+                    android:columnCount="1"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    >
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="which is "
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:textColor="#010101"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20dp"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="in Situation"
+                        android:id="@+id/trappedTextViewEquipment1"
+                        android:textColor="#ffc269"
+                        android:layout_row="1"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20dp"/>
+
+            </GridLayout>
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left|right"
+                    android:rowCount="2"
+                    android:useDefaultMargins="false"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:columnCount="2">
+
+                <View
+                        android:layout_width="@dimen/divider_size"
+                        android:layout_height="34dp"
+                        android:background="@color/background"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:layout_rowSpan="2"
+                        android:layout_gravity="center_vertical"
+                        android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Active"
+                        android:id="@+id/trappedTextArenaActive"
+                        android:singleLine="false"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:textColor="#00c435"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Custom"
+                        android:id="@+id/trappedTextArenaCustom"
+                        android:layout_column="1"
+                        android:layout_row="1"/>
+
+            </GridLayout>
+
+        </TableRow>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/options_toggle"
+                android:visibility="gone">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="3"
+                    android:columnCount="2">
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Section Active"
+                        android:id="@+id/switch1"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:textColor="@android:color/black"
+                        android:checked="false"
+                        android:enabled="false"/>
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customised"
+                        android:id="@+id/trappedSwitchArenaCustomised"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:textColor="@android:color/black"/>
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/trappedEditArena"
+                        android:layout_column="0"
+                        android:layout_row="2"
+                        android:hint="in Situation"
+                        android:textSize="15dp"/>
+            </GridLayout>
+
+        </TableRow>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/arrow_down_float"
+                android:background="@color/options_toggle"/>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/divider_size"
+                android:background="@color/background"
+                android:visibility="visible"/>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@id/trappedRowSituation1"
+                android:background="@android:color/background_light"
+                android:visibility="visible">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="2"
+                    android:columnCount="1"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    android:layout_span="0"
+                    android:layout_gravity="center_horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="You're equipped with "
+                        android:layout_row="0"
+                        android:textColor="#010101"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20dp"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Equipment"
+                        android:id="@+id/trappedTextViewEquipment1"
+                        android:textColor="#ffc269"
+                        android:layout_row="1"
+                        android:textSize="20dp"
+                        android:layout_gravity="center_horizontal"/>
+
+            </GridLayout>
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left|right"
+                    android:rowCount="2"
+                    android:useDefaultMargins="false"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:columnCount="2">
+
+                <View
+                        android:layout_width="@dimen/divider_size"
+                        android:layout_height="34dp"
+                        android:background="@color/background"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:layout_rowSpan="2"
+                        android:layout_gravity="center_vertical"
+                        android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Active"
+                        android:id="@+id/trappedTextArenaActive"
+                        android:singleLine="false"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:textColor="#00c435"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Custom"
+                        android:id="@+id/trappedTextArenaCustom"
+                        android:layout_column="1"
+                        android:layout_row="1"/>
+
+            </GridLayout>
+
+        </TableRow>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/options_toggle"
+                android:visibility="gone">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="3"
+                    android:columnCount="2">
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Section Active"
+                        android:id="@+id/switch1"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:textColor="@android:color/black"
+                        android:checked="false"
+                        android:enabled="false"/>
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customised"
+                        android:id="@+id/trappedSwitchArenaCustomised"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:textColor="@android:color/black"/>
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/trappedEditArena"
+                        android:layout_column="0"
+                        android:layout_row="2"
+                        android:hint="Equipment"/>
+            </GridLayout>
+
+        </TableRow>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:src="@android:drawable/arrow_down_float"
+                android:background="@color/options_toggle"/>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/divider_size"
+                android:background="@color/options_toggle"
+                android:visibility="visible"/>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@id/trappedRowSituation1"
+                android:background="@android:color/background_light"
+                android:visibility="visible">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="1"
+                    android:columnCount="1"
+                    android:id="@+id/trappedGridArena1"
+                    android:clickable="true"
+                    android:layout_weight="1">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Equipment"
+                        android:id="@+id/trappedTextViewEquipment1"
+                        android:textColor="#ffc269"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:layout_gravity="center"
+                        android:singleLine="false"
+                        android:textSize="20dp"/>
+
+            </GridLayout>
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left|right"
+                    android:rowCount="2"
+                    android:useDefaultMargins="false"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:columnCount="2">
+
+                <View
+                        android:layout_width="@dimen/divider_size"
+                        android:layout_height="34dp"
+                        android:background="@color/background"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:layout_rowSpan="2"
+                        android:layout_gravity="center_vertical"
+                        android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Active"
+                        android:id="@+id/trappedTextArenaActive"
+                        android:singleLine="false"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:textColor="#00c435"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Custom"
+                        android:id="@+id/trappedTextArenaCustom"
+                        android:layout_column="1"
+                        android:layout_row="1"/>
+
+            </GridLayout>
+
+        </TableRow>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/options_toggle"
+                android:visibility="gone">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="3"
+                    android:columnCount="2">
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Section Active"
+                        android:id="@+id/switch1"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:textColor="@android:color/black"
+                        android:checked="false"
+                        android:enabled="false"/>
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customised"
+                        android:id="@+id/trappedSwitchArenaCustomised"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:textColor="@android:color/black"/>
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/trappedEditArena"
+                        android:layout_column="0"
+                        android:layout_row="2"
+                        android:hint="Equipment"/>
+            </GridLayout>
+
+        </TableRow>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView4"
+                android:src="@android:drawable/arrow_down_float"
+                android:background="@color/options_toggle"/>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/divider_size"
+                android:background="@color/background"
+                android:visibility="visible"/>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@id/trappedRowSituation1"
+                android:background="@android:color/background_light"
+                android:visibility="visible">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="2"
+                    android:columnCount="1"
+                    android:id="@+id/trappedGridArena1"
+                    android:clickable="true"
+                    android:layout_weight="1"
+                    >
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="and "
+                        android:id="@+id/textView"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:textColor="#010101"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20dp"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Equipment"
+                        android:id="@+id/trappedTextViewEquipment1"
+                        android:textColor="#ffc269"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20dp"/>
+
+            </GridLayout>
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left|right"
+                    android:rowCount="2"
+                    android:useDefaultMargins="false"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:columnCount="2">
+
+                <View
+                        android:layout_width="@dimen/divider_size"
+                        android:layout_height="34dp"
+                        android:background="@color/background"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:layout_rowSpan="2"
+                        android:layout_gravity="center_vertical"
+                        android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Active"
+                        android:id="@+id/trappedTextArenaActive"
+                        android:singleLine="false"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:textColor="#00c435"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Custom"
+                        android:id="@+id/trappedTextArenaCustom"
+                        android:layout_column="1"
+                        android:layout_row="1"/>
+
+            </GridLayout>
+
+        </TableRow>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/options_toggle"
+                android:visibility="gone">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="3"
+                    android:columnCount="2">
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Section Active"
+                        android:id="@+id/switch1"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:textColor="@android:color/black"
+                        android:checked="false"
+                        android:enabled="false"/>
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customised"
+                        android:id="@+id/trappedSwitchArenaCustomised"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:textColor="@android:color/black"/>
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/trappedEditArena"
+                        android:layout_column="0"
+                        android:layout_row="2"
+                        android:hint="Equipment"/>
+            </GridLayout>
+
+        </TableRow>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:src="@android:drawable/arrow_down_float"
+                android:background="@color/options_toggle"/>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/divider_size"
+                android:background="@color/background"
+                android:visibility="visible"/>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@id/trappedRowSituation1"
+                android:background="@android:color/background_light"
+                android:visibility="visible">
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:rowCount="1"
+                    android:columnCount="1"
+                    android:id="@+id/trappedGridArena1"
+                    android:clickable="true"
+                    android:layout_weight="1">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="... What do you do?"
+                        android:textColor="#010101"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:singleLine="false"
+                        android:textSize="20dp"/>
+
+            </GridLayout>
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left|right"
+                    android:rowCount="2"
+                    android:useDefaultMargins="false"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:columnCount="2">
+
+                <View
+                        android:layout_width="@dimen/divider_size"
+                        android:layout_height="34dp"
+                        android:background="@color/background"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:layout_rowSpan="2"
+                        android:layout_gravity="center_vertical"
+                        android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Active"
+                        android:id="@+id/trappedTextArenaActive"
+                        android:singleLine="false"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:textColor="#00c435"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Custom"
+                        android:id="@+id/trappedTextArenaCustom"
+                        android:layout_column="1"
+                        android:layout_row="1"/>
+
+            </GridLayout>
+        </TableRow>
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/divider_size"
+                android:background="@color/options_toggle"
+                android:visibility="visible"/>
+
+    </TableLayout>
+
+</ScrollView>

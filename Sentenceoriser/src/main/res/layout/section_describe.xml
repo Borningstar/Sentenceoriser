@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ViewSwitcher
+        android:id="@+id/viewSwitcher1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:inAnimation="@android:anim/slide_in_left"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+        <!-- android:background="#D2FFC4" -->
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="@string/tempText"
+                android:id="@+id/textViewDescribe" android:textIsSelectable="false"
+                android:textSize="20dp" android:layout_weight="1" android:layout_gravity="center"
+                android:gravity="center"
+                android:singleLine="false"
+                android:textColor="#FF2626"
+                />
+
+        <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scrollView"/>
+    </LinearLayout>
+
+    <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView2">
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                     android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="fill_horizontal|fill_vertical"
+                      android:showDividers="beginning|middle|end"
+                      android:paddingBottom="5dp"
+                      android:divider="@android:drawable/divider_horizontal_bright">
+            <!-- android:background="#D2FFC4" -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@id/describeTopicRow1">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/Topic"
+                        android:id="@+id/describeTopicTitle"
+                        android:layout_column="0"/>
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@id/describeTopicRow2">
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:id="@+id/describeTopicEdit"
+                        android:layout_column="0"/>
+
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeTopicChecked"
+                        android:checked="false"/>
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeCharacter1Row1">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/you"
+                        android:id="@+id/textView"
+                        android:layout_column="0"
+                        android:singleLine="false"/>
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeCharacter1Switch"
+                        android:singleLine="false"
+                        android:checked="true"
+                        android:clickable="true"
+                        android:layout_column="1"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeCharacter1Row2">
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:id="@+id/describeCharacter1Edit"
+                        android:layout_column="0"/>
+
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeCharacter1Checked"/>
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeCharacter2Row1">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/them"
+                        android:id="@+id/textView"
+                        android:layout_column="0"
+                        android:singleLine="false"/>
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeCharacter2Switch"
+                        android:singleLine="false"
+                        android:checked="true"
+                        android:clickable="true"
+                        android:layout_column="1"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeCharacter2Row2">
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:id="@+id/describeCharacter2Edit"
+                        android:layout_column="0"/>
+
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeCharacter2Checked"/>
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeStatYouRow1">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/your_status"
+                        android:id="@+id/textView2"
+                        android:layout_column="0"
+                        android:singleLine="false"/>
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeStatusYouSwitch"
+                        android:singleLine="false"
+                        android:checked="true"
+                        android:clickable="true"
+                        android:layout_column="1"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeStatYouRow2">
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:id="@+id/describeStatusYouEdit"
+                        android:layout_column="0"/>
+
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeStatusYouBox"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeStatMeRow1">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/my_status"
+                        android:id="@+id/textView2"
+                        android:layout_column="0"
+                        android:singleLine="true"/>
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeStatusMeSwitch"
+                        android:singleLine="false"
+                        android:checked="true"
+                        android:clickable="true"
+                        android:layout_column="1"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeStatMeRow2">
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:id="@+id/describeStatusMeEdit"
+                        android:layout_column="0"/>
+
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeStatusMeBox"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeStatUsRow1">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/our_status"
+                        android:id="@+id/textView2"
+                        android:layout_column="0"
+                        android:singleLine="true"/>
+
+                <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeStatusUsSwitch"
+                        android:singleLine="false"
+                        android:checked="true"
+                        android:clickable="true"
+                        android:layout_column="1"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/describeStatUsRow2">
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:id="@+id/describeStatusUsEdit"
+                        android:layout_column="0"/>
+
+                <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/describeStatusUsBox"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/OK"
+                        android:id="@+id/describeButtonOK"
+                        android:layout_column="0"/>
+
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reset"
+                        android:id="@+id/describeButtonReset"/>
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+
+    </ScrollView>
+
+</ViewSwitcher>

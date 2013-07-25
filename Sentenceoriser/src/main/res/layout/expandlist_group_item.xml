@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="55dip"
+              android:background="@color/ExpandGroupBackground"
+              android:orientation="vertical" >
+
+
+    <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <TextView
+                android:id="@+id/settingsGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/Black"
+                android:textSize="17dip"
+                android:layout_gravity="left"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/menuItemStatus"
+                android:layout_gravity="right"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/arrow_down_float"
+                android:contentDescription="@string/arrow"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"/>
+    </GridLayout>
+
+</LinearLayout>
