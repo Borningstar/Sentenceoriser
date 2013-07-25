@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategorye
+        android:title="You're Trapped"
+        android:key="you're_trapped">
+
+        <ListPreference
+            android:title="Arena Mode"
+            android:key="arena_mode"
+            android:defaultValue="ON"
+            android:entries="@array/modeArray"
+            />
+
+        <TextPreference
+            android:title="Situation Mode"
+            android:key="situation_mode"
+            android:defaultValue="ON"
+        />
+
+        </PreferenceCategorye>
+
+</PreferenceScreen>

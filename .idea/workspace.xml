@@ -77,7 +77,25 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java" line="44" class="com.morningforge.sentenceoriser.sentences.sections.SectionListViewTest" package="com.morningforge.sentenceoriser.sentences.sections">
+        <option name="WATCH_ENTRY" value="true" />
+        <option name="WATCH_EXIT" value="true" />
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </method_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
@@ -125,15 +143,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ExpandListAdapter.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ExpandListAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Adapter/ExpandListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="29" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.39941263" vertical-offset="918" max-vertical-offset="2737">
+            <state line="83" column="42" selection-start="3185" selection-end="3185" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2397">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2587#3337#0" expanded="true" />
-                <element signature="e#3326#3327#0" expanded="true" />
+                <element signature="e#2548#2892#0" expanded="true" />
+                <element signature="e#2881#2882#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="preferences.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="37" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="arrays.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/values/arrays.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="24" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,16 +177,16 @@
       <file leaf-file-name="ExpandListGroup.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="5" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+            <state line="35" column="0" selection-start="919" selection-end="919" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExpandListChild.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ExpandListChild.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListChild.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="20" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="2" column="3" selection-start="68" selection-end="68" vertical-scroll-proportion="0.04992658" vertical-offset="0" max-vertical-offset="833">
               <folding />
             </state>
           </provider>
@@ -159,64 +195,11 @@
       <file leaf-file-name="SectionListViewTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="2428" selection-end="2428" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1309">
+            <state line="55" column="80" selection-start="2240" selection-end="2240" vertical-scroll-proportion="0.0" vertical-offset="543" max-vertical-offset="1224">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1634#1651#0" expanded="true" />
                 <element signature="e#1711#1728#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="expandlist_child_item.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_child_item.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state line="4" column="43" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="expandlist_group_item.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_group_item.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state line="4" column="42" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SectionGrid.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionGrid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="30" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="850">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="77" selection-start="5584" selection-end="5584" vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="2584">
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2196#2406#0" expanded="false" />
-                <element signature="e#2395#2396#0" expanded="false" />
-                <element signature="e#5126#5160#0" expanded="false" />
-                <element signature="e#5228#5262#0" expanded="false" />
-                <element signature="e#5330#5364#0" expanded="false" />
-                <element signature="e#5432#5466#0" expanded="false" />
-                <element signature="e#5534#5568#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -232,8 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/SectionTrapped.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/section_trapped.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/listviewlayout.xml" />
@@ -242,12 +223,14 @@
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/section_test.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/WordStatus.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java" />
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListGroup.java" />
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListChild.java" />
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_child_item.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_group_item.xml" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/values/arrays.xml" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListGroup.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Adapter/ExpandListAdapter.java" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListChild.java" />
       </list>
     </option>
   </component>
@@ -395,22 +378,8 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Sentenceoriser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
+              <option name="myItemId" value="xml" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -425,10 +394,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,7 +411,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -873,7 +838,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3222958" sideWeight="0.7963753" order="2" side_tool="false" content_ui="tabs" />
@@ -965,56 +930,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionTrapped.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="18" selection-start="7154" selection-end="7154" vertical-scroll-proportion="0.0" vertical-offset="2458" max-vertical-offset="3332">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/section_trapped.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="696" column="48" selection-start="32741" selection-end="32741" vertical-scroll-proportion="-10.48" vertical-offset="11570" max-vertical-offset="14127">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/section_test.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="52" selection-start="1733" selection-end="1733" vertical-scroll-proportion="-7.08" vertical-offset="554" max-vertical-offset="13600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicDescribe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2210">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/build/manifests/debug/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="237" selection-end="237" vertical-scroll-proportion="0.12208258" vertical-offset="0" max-vertical-offset="557">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/WordStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="35" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionDescribe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="13" selection-start="649" selection-end="649" vertical-scroll-proportion="0.17474303" vertical-offset="0" max-vertical-offset="4947">
@@ -1057,14 +972,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="2428" selection-end="2428" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1309">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1634#1651#0" expanded="true" />
-            <element signature="e#1711#1728#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_group_item.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="4" column="42" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,38 +992,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_group_item.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="4" column="42" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/values/arrays.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="24" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListChild.java">
+    <entry file="jar://C:/Program Files (x86)/Android/SDK/sdk/platforms/android-17/android.jar!/android/database/Observable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="20" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+        <state line="15" column="16" selection-start="449" selection-end="449" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListGroup.java">
+    <entry file="jar://C:/Program Files (x86)/Android/SDK/sdk/platforms/android-17/android.jar!/android/database/DataSetObservable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="5" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+        <state line="11" column="16" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Android/SDK/sdk/platforms/android-17/android.jar!/android/widget/BaseExpandableListAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="16" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="67" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Android/SDK/sdk/platforms/android-17/android.jar!/android/preference/PreferenceManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Adapter/ExpandListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="29" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.39941263" vertical-offset="918" max-vertical-offset="2737">
+        <state line="83" column="42" selection-start="3185" selection-end="3185" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2397">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2587#3337#0" expanded="true" />
-            <element signature="e#3326#3327#0" expanded="true" />
+            <element signature="e#2548#2892#0" expanded="true" />
+            <element signature="e#2881#2882#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="37" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="80" selection-start="2240" selection-end="2240" vertical-scroll-proportion="0.0" vertical-offset="543" max-vertical-offset="1224">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1634#1651#0" expanded="true" />
+            <element signature="e#1711#1728#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="919" selection-end="919" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListChild.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="3" selection-start="68" selection-end="68" vertical-scroll-proportion="0.04992658" vertical-offset="0" max-vertical-offset="833">
+          <folding />
         </state>
       </provider>
     </entry>

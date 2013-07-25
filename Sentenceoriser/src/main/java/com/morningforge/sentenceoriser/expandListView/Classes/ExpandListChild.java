@@ -5,14 +5,33 @@ package com.morningforge.sentenceoriser.expandListView.Classes;
  */
 public class ExpandListChild {
     private String sentence;
-    private int mode;
+    private String modeSettings;
+    private String[] modeTypes = {"ON", "CUSTOM", "OFF"};
+    private int modeIndex = 0;
 
-    public int getMode() {
-        return mode;
+    public ExpandListChild(String sentence, String modeSettings){
+        this.sentence = sentence;
+        this.modeSettings = modeSettings;
+    };
+
+    public String getModeSettings(){
+        return modeSettings;
+    }
+
+    public String getMode() {
+        return modeTypes[modeIndex];
     }
 
     public void setMode(int mode) {
-        this.mode = mode;
+        modeIndex = mode;
+    }
+
+    public void incMode(){
+        if (modeIndex < 2){
+            modeIndex++;
+        } else {
+            modeIndex = 0;
+        }
     }
 
     public String getSentence() {

@@ -45,20 +45,15 @@ public class SectionListViewTest extends Fragment {
     public ArrayList<ExpandListGroup> SetStandardGroups() {
         ArrayList<ExpandListGroup> list = new ArrayList<ExpandListGroup>();
         ArrayList<ExpandListChild> list2 = new ArrayList<ExpandListChild>();
-        ExpandListGroup gru1 = new ExpandListGroup();
-        gru1.setSentence("You're trapped in An Arena");
-        ExpandListChild ch1_1 = new ExpandListChild();
-        ch1_1.setSentence("An Arena");
-        ch1_1.setMode(0);
+        ExpandListGroup gru1 = new ExpandListGroup("You're trapped in An Arena", "arena_mode");
+        ExpandListChild ch1_1 = new ExpandListChild("An Arena", "arena_mode");
         list2.add(ch1_1);
         gru1.setItems(list2);
         list2 = new ArrayList<ExpandListChild>();
 
-        ExpandListGroup gru2 = new ExpandListGroup();
+        ExpandListGroup gru2 = new ExpandListGroup("which is in Situation", "situation_mode");
         gru2.setSentence("which is in Situation");
-        ExpandListChild ch2_1 = new ExpandListChild();
-        ch2_1.setSentence("Situation");
-        ch2_1.setMode(0);
+        ExpandListChild ch2_1 = new ExpandListChild("Situation", "situation_mode");
         list2.add(ch2_1);
         gru2.setItems(list2);
         list.add(gru1);

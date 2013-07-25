@@ -3,6 +3,8 @@ package com.morningforge.sentenceoriser.expandListView.Adapter;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +21,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private ArrayList<ExpandListGroup> groups;
-    private String mode;
+
     public ExpandListAdapter(Context context, ArrayList<ExpandListGroup> groups) {
         this.context = context;
         this.groups = groups;
@@ -53,47 +55,22 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
             view = infalInflater.inflate(R.layout.expandlist_child_item, null);
         }
 
+        final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences.Editor preferencesEditor = settings.edit();
+
         final Button button = (Button)view.findViewById(R.id.menuButton);
-        switch (child.getMode())
-        {
-            case 0:
-                mode = "ON";
-                break;
-            case 1:
-                mode = "CUSTOM";
-                break;
-            case 2:
-                mode = "OFF";
-                break;
-            default:
-                mode = "ERR";
-        }
-        button.setText(mode);
+
+        button.setText(settings.getString(child.getModeSettings(), "N/A"));
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (child.getMode() < 2){
-                    child.setMode(child.getMode() + 1);
-                } else {
-                    child.setMode(0);
-                }
 
-                switch (child.getMode())
-                {
-                    case 0:
-                        mode = "ON";
-                        break;
-                    case 1:
-                        mode = "CUSTOM";
-                        break;
-                    case 2:
-                        mode = "OFF";
-                        break;
-                    default:
-                        mode = "ERR";
-                }
+                child.incMode();
 
-                button.setText(mode);
+                preferencesEditor.putString(child.getModeSettings(),child.getMode());
+                preferencesEditor.commit();
+
+                button.setText(settings.getString(child.getModeSettings(), "N/A"));
             }
         });
 
@@ -133,11 +110,14 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
             LayoutInflater inf = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             view = inf.inflate(R.layout.expandlist_group_item, null);
         }
+
+        final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+
         TextView sentence = (TextView) view.findViewById(R.id.settingsGroup);
         sentence.setText(group.getSentence());
 
         TextView mode = (TextView)view.findViewById(R.id.menuItemStatus);
-        mode.setText(this.mode);
+        mode.setText(settings.getString(group.getModeSettings(), "N/A"));
 
         // TODO Auto-generated method stub
         return view;
