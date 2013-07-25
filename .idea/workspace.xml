@@ -128,9 +128,11 @@
       <file leaf-file-name="ExpandListAdapter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Adapter/ExpandListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="5" selection-start="2991" selection-end="2991" vertical-scroll-proportion="0.51261467" vertical-offset="1032" max-vertical-offset="2108">
+            <state line="70" column="29" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.39941263" vertical-offset="918" max-vertical-offset="2737">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2587#3337#0" expanded="true" />
+                <element signature="e#3326#3327#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,7 +159,7 @@
       <file leaf-file-name="SectionListViewTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="42" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="614" max-vertical-offset="1547">
+            <state line="69" column="0" selection-start="2428" selection-end="2428" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1309">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1634#1651#0" expanded="true" />
@@ -173,7 +175,7 @@
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state line="4" column="54" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+            <state line="4" column="43" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
@@ -185,7 +187,7 @@
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state line="4" column="53" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+            <state line="4" column="42" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
               <folding />
             </state>
           </provider>
@@ -240,10 +242,10 @@
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/section_test.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/WordStatus.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java" />
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_child_item.xml" />
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListGroup.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListChild.java" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_child_item.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_group_item.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Adapter/ExpandListAdapter.java" />
       </list>
@@ -892,8 +894,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.64922047" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16061899" sideWeight="0.6703786" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21269488" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16061899" sideWeight="0.7873051" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21269488" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1055,24 +1057,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_child_item.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="4" column="54" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="42" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="563" max-vertical-offset="1547">
+        <state line="69" column="0" selection-start="2428" selection-end="2428" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1309">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1634#1651#0" expanded="true" />
             <element signature="e#1711#1728#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_child_item.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="4" column="43" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_group_item.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="4" column="42" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,21 +1102,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/expandlist_group_item.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="4" column="53" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Adapter/ExpandListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="5" selection-start="2991" selection-end="2991" vertical-scroll-proportion="0.51261467" vertical-offset="1032" max-vertical-offset="2108">
+        <state line="70" column="29" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.39941263" vertical-offset="918" max-vertical-offset="2737">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2587#3337#0" expanded="true" />
+            <element signature="e#3326#3327#0" expanded="true" />
           </folding>
         </state>
       </provider>

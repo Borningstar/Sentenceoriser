@@ -3,11 +3,13 @@ package com.morningforge.sentenceoriser.expandListView.Adapter;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import com.morningforge.sentenceoriser.R;
 import com.morningforge.sentenceoriser.expandListView.Classes.ExpandListChild;
@@ -17,6 +19,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private ArrayList<ExpandListGroup> groups;
+    private String mode;
     public ExpandListAdapter(Context context, ArrayList<ExpandListGroup> groups) {
         this.context = context;
         this.groups = groups;
@@ -44,27 +47,58 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View view,
                              ViewGroup parent) {
-        ExpandListChild child = (ExpandListChild) getChild(groupPosition, childPosition);
+        final ExpandListChild child = (ExpandListChild) getChild(groupPosition, childPosition);
         if (view == null) {
             LayoutInflater infalInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             view = infalInflater.inflate(R.layout.expandlist_child_item, null);
         }
 
-        Button button = (Button)view.findViewById(R.id.menuButton);
+        final Button button = (Button)view.findViewById(R.id.menuButton);
         switch (child.getMode())
         {
             case 0:
-                button.setText("ON");
+                mode = "ON";
                 break;
             case 1:
-                button.setText("CUSTOM");
+                mode = "CUSTOM";
                 break;
             case 2:
-                button.setText("OFF");
+                mode = "OFF";
                 break;
             default:
-                button.setText("ERR");
+                mode = "ERR";
         }
+        button.setText(mode);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (child.getMode() < 2){
+                    child.setMode(child.getMode() + 1);
+                } else {
+                    child.setMode(0);
+                }
+
+                switch (child.getMode())
+                {
+                    case 0:
+                        mode = "ON";
+                        break;
+                    case 1:
+                        mode = "CUSTOM";
+                        break;
+                    case 2:
+                        mode = "OFF";
+                        break;
+                    default:
+                        mode = "ERR";
+                }
+
+                button.setText(mode);
+            }
+        });
+
+        EditText editText = (EditText)view.findViewById(R.id.menuEditText);
+        editText.setHint(child.getSentence());
         // TODO Auto-generated method stub
         return view;
     }
@@ -101,6 +135,9 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         }
         TextView sentence = (TextView) view.findViewById(R.id.settingsGroup);
         sentence.setText(group.getSentence());
+
+        TextView mode = (TextView)view.findViewById(R.id.menuItemStatus);
+        mode.setText(this.mode);
 
         // TODO Auto-generated method stub
         return view;

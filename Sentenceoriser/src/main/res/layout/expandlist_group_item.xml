@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
-              android:layout_height="55dip"
-              android:background="@color/ExpandGroupBackground"
-              android:orientation="vertical" >
+              android:layout_height="100dip"
+              android:background="@color/options_toggle"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/divider_size">
 
 
     <GridLayout
@@ -16,15 +17,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:textColor="@color/Black"
-                android:textSize="17dip"
-                android:layout_gravity="left"/>
+                android:textSize="20dip"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="@dimen/border_margin"
+                android:textAlignment="center"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:id="@+id/menuItemStatus"
-                android:layout_gravity="right"/>
+                android:layout_gravity="center_vertical|right"/>
 
         <ImageView
                 android:layout_width="wrap_content"
