@@ -28,6 +28,7 @@ public class TopicWins {
 
     //Generates a random number between min and max
     private int randomiser (int min, int max){
+        // TODO: make actually generate values between min and max
         Random rand = new Random();
 
         return (rand.nextInt(max) + min);
