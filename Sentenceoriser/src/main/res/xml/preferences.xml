@@ -15,7 +15,7 @@
         <TextPreference
             android:title="Situation Mode"
             android:key="situation_mode"
-            android:defaultValue="ON"
+            android:defaultValue="0"
         />
 
         </PreferenceCategorye>

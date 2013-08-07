@@ -61,6 +61,4 @@ public class SectionListViewTest extends Fragment {
 
         return list;
     }
-
-
 }

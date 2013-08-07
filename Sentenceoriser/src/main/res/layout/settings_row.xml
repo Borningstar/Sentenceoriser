@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/settingsRowLayout"
+        android:baselineAligned="false"
+        android:background="@color/background">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/settingsTextStatic"
+            android:text="This is a "
+            android:textColor="@color/Black"/>
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:inputType="text"
+            android:id="@+id/settingsEditWord"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/settingsTextWord"
+            android:text="Sentence"
+            android:textColor="@color/ExpandGroupBackground"/>
+</LinearLayout>

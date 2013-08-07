@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="share" type="id">share</item>
-    <item name="settings" type="id">settings</item><item name="describeTopicRow1" type="id"/><item name="describeTopicRow2" type="id"/>
+    <item name="settings" type="id">settings</item>
+    <item name="describeTopicRow1" type="id"/>
+    <item name="describeTopicRow2" type="id"/>
     <item name="trappedRow1" type="id">trappedRow1</item>
     <item name="trappedRow2" type="id">trappedRow2</item>
-    <item name="trappedSituationRow2" type="id">trappedSituationRow2</item><item name="trappedSwitchArenaCustom" type="id"/><item name="trappedRowArena2" type="id"/>
+    <item name="trappedSituationRow2" type="id">trappedSituationRow2</item>
+    <item name="trappedSwitchArenaCustom" type="id"/>
+    <item name="trappedRowArena2" type="id"/>
     <item name="trappedRowEquipment11" type="id"/>
     <item name="trappedRowSituation1" type="id"/>
     <item name="trappedRowArena1" type="id"/>
