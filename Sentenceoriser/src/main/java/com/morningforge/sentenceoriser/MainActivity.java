@@ -111,27 +111,19 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
-            this.c = c;
         }
 
         @Override
         public Fragment getItem(int position) {
-            Fragment fragment = null;
             switch (position){
-                case 0: fragment = new SectionGrid(c);
-                    break;
-                case 1: fragment = new SectionRand(c);
-                    break;
-                case 2:fragment = new SectionWins(c);
-                    break;
-                case 3:fragment = new SectionTrapped(c);
-                    break;
-                case 4:fragment = new SectionDescribe(c);
-                    break;
-                case 5:fragment = new SectionListViewTest(c);
+                case 0: return new SectionGrid(c);
+                case 1: return new SectionRand(c);
+                case 2: return new SectionWins(c);
+                case 3: return new SectionTrapped(c);
+                case 4: return new SectionDescribe(c);
+                case 5: return new SectionSettingsTest(c);
+                default: return new SectionGrid(c);
             }
-
-            return fragment;
         }
 
         @Override

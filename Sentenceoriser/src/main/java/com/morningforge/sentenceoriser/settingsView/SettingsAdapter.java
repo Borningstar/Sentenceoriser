@@ -14,53 +14,66 @@ import java.util.ArrayList;
 /**
  * Created by Ben on 7/08/13.
  */
-public class SettingsAdapter extends ArrayList {
+public class SettingsAdapter extends ArrayAdapter<SettingsRow> {
     private Context context;
-    private ArrayList<SettingsRow> Rows;
+    private ArrayList<SettingsRow> rows;
 
-    public void addRow(String sentence, String preferencesID, String word){
-        Rows.add(new SettingsRow(sentence, preferencesID, word));
+    public SettingsAdapter(Context context, int textViewResourceId, ArrayList<SettingsRow> rows) {
+        super(context, textViewResourceId);
+        this.rows = rows;
+
     }
 
     public View getView(int i, View view, ViewGroup viewGroup) {
-        final SettingsRow row = Rows.get(i);
+        context = getContext();
         if (view == null) {
             LayoutInflater infalInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             view = infalInflater.inflate(R.layout.settings_row, null);
         }
 
+        final SettingsRow row = rows.get(i);
+
         final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         final SharedPreferences.Editor preferencesEditor = settings.edit();
 
-        TextView sentence = (TextView)view.findViewById(R.id.settingsTextStatic);
-        final TextView word = (TextView)view.findViewById(R.id.settingsTextWord);
-        EditText editWord = (EditText)view.findViewById(R.id.settingsEditWord);
-        TableRow settingsRow = (TableRow)view.findViewById(R.id.settingsRowLayout);
+        if (row != null){
+            TextView sentence = (TextView)view.findViewById(R.id.settingsTextStatic);
+            final TextView word = (TextView)view.findViewById(R.id.settingsTextWord);
+            final EditText editWord = (EditText)view.findViewById(R.id.settingsEditWord);
+            LinearLayout settingsRow = (LinearLayout)view.findViewById(R.id.settingsRowLayout);
 
-        sentence.setText(row.getSentence());
-        word.setText(row.getWord());
+            sentence.setText(row.getSentence());
+            word.setText(row.getWord());
 
-        settingsRow.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+            settingsRow.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
 
-                String modeType = "ON";
+                    String modeType = "ON";
 
-                row.incMode();
-                switch (row.getMode()){
-                    case 0: word.setVisibility(View.VISIBLE);
-                        modeType = "ON";
-                        break;
-                    case 1: word.setVisibility(View.GONE);
-                        modeType = "CUSTOM";
-                        break;
-                    case 2: word.setVisibility(View.VISIBLE);
-                        break;
+                    row.incMode();
+                    switch (row.getMode()){
+                        case 0:
+                            word.setVisibility(View.VISIBLE);
+                            modeType = "ON";
+                            break;
+                        case 1:
+                            word.setVisibility(View.GONE);
+                            editWord.setVisibility(View.VISIBLE);
+                            editWord.setHint(row.getWord());
+                            modeType = "CUSTOM";
+                            break;
+                        case 2:
+                            word.setVisibility(View.VISIBLE);
+                            editWord.setVisibility(View.GONE);
+                            modeType =  "OFF";
+                            break;
+                    }
+
+                    preferencesEditor.putString(row.getPreferencesID(),modeType);
+                    preferencesEditor.commit();
                 }
-
-                preferencesEditor.putString(row.getPreferencesID(),modeType);
-                preferencesEditor.commit();
-            }
-        });
+            });
+        }
 
         return view;
     }

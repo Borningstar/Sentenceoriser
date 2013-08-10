@@ -13,19 +13,22 @@
             android:layout_height="wrap_content"
             android:id="@+id/settingsTextStatic"
             android:text="This is a "
-            android:textColor="@color/Black"/>
+            android:textColor="@color/Black"
+            android:textSize="@dimen/settings_text_size"/>
 
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
             android:inputType="text"
-            android:id="@+id/settingsEditWord"/>
+            android:id="@+id/settingsEditWord"
+            android:textSize="@dimen/settings_text_size"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/settingsTextWord"
             android:text="Sentence"
-            android:textColor="@color/ExpandGroupBackground"/>
+            android:textColor="@color/ExpandGroupBackground"
+            android:textSize="@dimen/settings_text_size"/>
 </LinearLayout>

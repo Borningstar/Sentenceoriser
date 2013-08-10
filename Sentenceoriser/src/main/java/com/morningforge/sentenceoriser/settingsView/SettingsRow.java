@@ -9,10 +9,10 @@ public class SettingsRow {
     private String preferencesID;        //Links the row to the preferences ID value
     private int mode = 0; //ON, CUSTOM, OFF
 
-    public SettingsRow(String sentence, String modeSettings, String word){
+    public SettingsRow(String sentence, String preferencesID, String word){
         this.word = word;
         this.sentence = sentence;
-        this.preferencesID = modeSettings;
+        this.preferencesID = preferencesID;
     };
 
     public String getWord() {
