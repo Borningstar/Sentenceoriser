@@ -6,7 +6,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/settingsRowLayout"
         android:baselineAligned="false"
-        android:background="@color/background">
+        android:background="@color/row_background"
+        android:gravity="center">
 
     <TextView
             android:layout_width="wrap_content"
@@ -22,13 +23,17 @@
             android:visibility="gone"
             android:inputType="text"
             android:id="@+id/settingsEditWord"
-            android:textSize="@dimen/settings_text_size"/>
+            android:textSize="@dimen/settings_text_size"
+            android:hint="Test"
+            android:phoneNumber="false"
+            style="@android:style/Theme.Black"
+            android:textColor="@color/Black"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/settingsTextWord"
             android:text="Sentence"
-            android:textColor="@color/ExpandGroupBackground"
+            android:textColor="@color/Black"
             android:textSize="@dimen/settings_text_size"/>
 </LinearLayout>

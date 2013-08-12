@@ -34,7 +34,7 @@ public class SectionListViewTest extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View rootView = inflater.inflate(R.layout.listviewlayout, container, false);
-       // ExpandList = (ExpandableListView) rootView.findViewById(R.id.ExpList);
+        ExpandList = (ExpandableListView) rootView.findViewById(R.id.ExpList);
         ExpListItems = SetStandardGroups();
         ExpAdapter = new ExpandListAdapter(c, ExpListItems);
         ExpandList.setAdapter(ExpAdapter);

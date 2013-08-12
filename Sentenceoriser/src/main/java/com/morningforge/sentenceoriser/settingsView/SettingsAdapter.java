@@ -2,6 +2,7 @@ package com.morningforge.sentenceoriser.settingsView;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,11 +41,12 @@ public class SettingsAdapter extends ArrayAdapter<SettingsRow> {
             TextView sentence = (TextView)view.findViewById(R.id.settingsTextStatic);
             final TextView word = (TextView)view.findViewById(R.id.settingsTextWord);
             final EditText editWord = (EditText)view.findViewById(R.id.settingsEditWord);
-            LinearLayout settingsRow = (LinearLayout)view.findViewById(R.id.settingsRowLayout);
+            final LinearLayout settingsRow = (LinearLayout)view.findViewById(R.id.settingsRowLayout);
 
             sentence.setText(row.getSentence());
             word.setText(row.getWord());
 
+            final View finalView = view;
             settingsRow.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
@@ -54,6 +56,7 @@ public class SettingsAdapter extends ArrayAdapter<SettingsRow> {
                     switch (row.getMode()){
                         case 0:
                             word.setVisibility(View.VISIBLE);
+                            settingsRow.setBackgroundColor(finalView.getResources().getColor(R.color.background));
                             modeType = "ON";
                             break;
                         case 1:
@@ -65,6 +68,7 @@ public class SettingsAdapter extends ArrayAdapter<SettingsRow> {
                         case 2:
                             word.setVisibility(View.VISIBLE);
                             editWord.setVisibility(View.GONE);
+                            settingsRow.setBackgroundColor(Color.GRAY);
                             modeType =  "OFF";
                             break;
                     }

@@ -5,10 +5,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:gravity="center">
+        android:gravity="center"
+        android:background="@color/background">
 
     <ListView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@android:id/list"/>
+            android:id="@android:id/list"
+            android:dividerHeight="@dimen/border_margin"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true"/>
 </LinearLayout>
