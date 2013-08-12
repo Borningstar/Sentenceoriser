@@ -7,12 +7,16 @@ public class SettingsRow {
     private String sentence;
     private String word;
     private String preferencesID;        //Links the row to the preferences ID value
+    private String sentence2;
     private int mode = 0; //ON, CUSTOM, OFF
+    private boolean changeable;
 
-    public SettingsRow(String sentence, String preferencesID, String word){
+    public SettingsRow(String sentence, String word, String sentence2, String preferencesID, boolean changeable){
         this.word = word;
         this.sentence = sentence;
+        this.sentence2 = sentence2;
         this.preferencesID = preferencesID;
+        this.changeable = changeable;
     };
 
     public String getWord() {
@@ -46,5 +50,7 @@ public class SettingsRow {
         this.sentence = sentence;
     }
 
-
+    public boolean isChangeable() {
+        return changeable;
+    }
 }

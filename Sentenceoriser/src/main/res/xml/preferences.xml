@@ -20,4 +20,16 @@
 
         </PreferenceCategorye>
 
+    <PreferenceCategory
+        android:title="Who Wins">
+
+        <TextPreference
+                android:title="Situation Mode"
+                android:key="situation_mode"
+                android:defaultValue="0"
+                />
+
+
+        </PreferenceCategory>
+
 </PreferenceScreen>

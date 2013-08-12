@@ -19,11 +19,38 @@ public class TopicWins {
     private WordArray modifiers;
     private WordArray objects;
 
+    private String ad1Modifier, ad1Weapon, ad1,
+            ad2Modifier, ad2Weapon, ad2;
+
+    private Boolean ad1ModifierActive, ad1WeaponActive,
+            ad2ModifierActive, ad2WeaponActive;
+
+    private Boolean ad1ModifierCustom, ad1WeaponCustom, ad1Custom,
+            ad2ModifierCustom, ad2WeaponCustom, ad2Custom;
+
     //Initiatise the WordArrays using specific files
     public TopicWins(Context context){
         subjects = new WordArray(context, "WinsSubjects");
         modifiers = new WordArray(context, "WinsModifiers");
         objects = new WordArray(context, "WinsObjects");
+
+        ad1ModifierActive = true;
+        ad1WeaponActive = true;
+        ad1ModifierActive = true;
+
+        ad2ModifierActive = true;
+        ad2WeaponActive = true;
+        ad2ModifierActive = true;
+
+        ad1ModifierCustom = false;
+        ad1WeaponCustom = false;
+        ad1ModifierCustom = false;
+        ad1Custom = false;
+
+        ad2ModifierCustom = false;
+        ad2WeaponCustom = false;
+        ad2ModifierCustom = false;
+        ad2Custom = false;
     }
 
     //Generates a random number between min and max
@@ -42,51 +69,52 @@ public class TopicWins {
         return sentence;
     }
 
-    //Generate the topic with a custom subject
-    public String generateTopic(String customSubject){
-
-        String sentence =  whoWinsSentence(customSubject);
-
-        return sentence;
-    }
-
     // Generate a who wins topic
     private String whoWinsSentence (){
 
+        /*
+        If Modifier
+        Adversary
+        used Weapon to fight
+        fought Modifier
+        Adversary
+        who's armed with Weapon
+        then who would win?
+         */
+
+        if (!ad1ModifierCustom){ad1Modifier = modifiers.getWord();}
+        if (!ad1WeaponCustom){ad1Weapon = objects.getWord();}
+        if (!ad1Custom){ad1 = subjects.getWord();}
+        if (!ad2ModifierCustom){ad2Modifier = modifiers.getWord();}
+        if (!ad2WeaponCustom){ad2Weapon = objects.getWord();}
+        if (!ad2Custom){ad2 = subjects.getWord();}
+
         String sentence = "If ";                    //First part of the sentence
-
-        String p1 = subjects.getWord();             //First adversary
-        String p1Modifier = modifiers.getWord();    //Modifier for the adversary, tall, strong, crazy, etc
-        String p1Weapon = objects.getWord();        //Weapon for the adversary, gun, banana, etc
-
-        String p2 = subjects.getWord();
-        String p2Modifier = modifiers.getWord();
-        String p2Weapon = objects.getWord();
 
         //Construct first half of sentence
         //50% chance of a modifier being used
-        if (randomiser(1, 2) == 1){
-            sentence = sentence + p1Modifier + " ";
+        if ((randomiser(1, 2) == 1) && ad1ModifierActive){
+            sentence = sentence + ad1Modifier + " ";
         }
         //Set participant
-        sentence = sentence + p1;
+        sentence = sentence + ad1;
         //50% chance of a weapon being used
-        if (randomiser(1, 2) == 1){
-            sentence = sentence + " used " + p1Weapon + " to fight ";
+        if ((randomiser(1, 2) == 1) && ad1WeaponActive){
+            sentence = sentence + " used " + ad1Weapon + " to fight ";
         } else {
             sentence = sentence + " fought ";
         }
 
         //Construct second half of sentence
         //Set modifier
-        if (randomiser(1, 2) == 1){
-            sentence = sentence + p2Modifier + " ";
+        if ((randomiser(1, 2) == 1) && ad2ModifierActive){
+            sentence = sentence + ad2Modifier + " ";
         }
         //Set participant
-        sentence = sentence + p2;
+        sentence = sentence + ad2;
         //Set weapon
-        if (randomiser(1, 2) == 1){
-            sentence = sentence + ", who's armed with " + p2Weapon;
+        if ((randomiser(1, 2) == 1) && ad2WeaponActive){
+            sentence = sentence + ", who's armed with " + ad2Weapon;
         }
 
         sentence = sentence + "... \r\n \r\n ... Then who would win?";
@@ -94,47 +122,67 @@ public class TopicWins {
         return sentence;
     }
 
-    private String whoWinsSentence (String customSubject){
-
-        String sentence = "If ";
-
-        String p1 = customSubject;
-        String p1Modifier = modifiers.getWord();
-        String p1Weapon = objects.getWord();
-
-        String p2 = subjects.getWord();
-        String p2Modifier = modifiers.getWord();
-        String p2Weapon = objects.getWord();
-
-        //Construct first half of sentence
-        //Set modifier
-        if (randomiser(1, 2) == 1){
-            sentence = sentence + p1Modifier + " ";
-        }
-        //Set participant
-        sentence = sentence + p1;
-        //Set weapon
-        if (randomiser(1, 2) == 1){
-            sentence = sentence + " used " + p1Weapon + " to fight ";
-        } else {
-            sentence = sentence + " fought ";
-        }
-
-        //Construct second half of sentence
-        //Set modifier
-        if (randomiser(1, 2) == 1){
-            sentence = sentence + p2Modifier + " ";
-        }
-        //Set participant
-        sentence = sentence + p2;
-        //Set weapon
-        if (randomiser(1, 2) == 1){
-            sentence = sentence + ", who's armed with " + p2Weapon;
-        }
-
-        sentence = sentence + "... \r\n \r\n ... Then who would win?";
-
-        return sentence;
+    public void setAd1Modifier(String ad1Modifier) {
+        this.ad1Modifier = ad1Modifier;
     }
 
+    public void setAd1Weapon(String ad1Weapon) {
+        this.ad1Weapon = ad1Weapon;
+    }
+
+    public void setAd1(String ad1) {
+        this.ad1 = ad1;
+    }
+
+    public void setAd2Modifier(String ad2Modifier) {
+        this.ad2Modifier = ad2Modifier;
+    }
+
+    public void setAd2Weapon(String ad2Weapon) {
+        this.ad2Weapon = ad2Weapon;
+    }
+
+    public void setAd2(String ad2) {
+        this.ad2 = ad2;
+    }
+
+    public void setAd1ModifierActive(Boolean ad1ModifierActive) {
+        this.ad1ModifierActive = ad1ModifierActive;
+    }
+
+    public void setAd1WeaponActive(Boolean ad1WeaponActive) {
+        this.ad1WeaponActive = ad1WeaponActive;
+    }
+
+    public void setAd2ModifierActive(Boolean ad2ModifierActive) {
+        this.ad2ModifierActive = ad2ModifierActive;
+    }
+
+    public void setAd2WeaponActive(Boolean ad2WeaponActive) {
+        this.ad2WeaponActive = ad2WeaponActive;
+    }
+
+    public void setAd1ModifierCustom(Boolean ad1ModifierCustom) {
+        this.ad1ModifierCustom = ad1ModifierCustom;
+    }
+
+    public void setAd1WeaponCustom(Boolean ad1WeaponCustom) {
+        this.ad1WeaponCustom = ad1WeaponCustom;
+    }
+
+    public void setAd1Custom(Boolean ad1Custom) {
+        this.ad1Custom = ad1Custom;
+    }
+
+    public void setAd2ModifierCustom(Boolean ad2ModifierCustom) {
+        this.ad2ModifierCustom = ad2ModifierCustom;
+    }
+
+    public void setAd2WeaponCustom(Boolean ad2WeaponCustom) {
+        this.ad2WeaponCustom = ad2WeaponCustom;
+    }
+
+    public void setAd2Custom(Boolean ad2Custom) {
+        this.ad2Custom = ad2Custom;
+    }
 }

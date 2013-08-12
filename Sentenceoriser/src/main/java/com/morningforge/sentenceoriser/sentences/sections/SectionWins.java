@@ -8,21 +8,30 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.*;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ViewAnimator;
+
 import com.morningforge.sentenceoriser.MainActivity;
 import com.morningforge.sentenceoriser.R;
 import com.morningforge.sentenceoriser.sentences.topics.TopicGenerator;
+import com.morningforge.sentenceoriser.settingsView.SettingsAdapter;
+import com.morningforge.sentenceoriser.settingsView.SettingsRow;
 
-public class SectionWins extends Fragment {
+import java.util.ArrayList;
+
+public class SectionWins extends ListFragment {
     Context c;
 
     private TopicGenerator topicGenerator;
     private String sentence;
     private String customSubject = "";
+    private ViewAnimator viewAnimator;
     ScaleGestureDetector scaleGestureDetector;
+    private ArrayList<SettingsRow> rows = null;
+    private SettingsAdapter adapter;
 
     public SectionWins(Context c) {
         this.c = c;
@@ -32,18 +41,26 @@ public class SectionWins extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        View settingsView = inflater.inflate(R.layout.settings_layout, container, false);
+        View sentenceView = inflater.inflate(R.layout.sentence_text, container, false);
+        View rootView = inflater.inflate(R.layout.sentence_layout, container, false);
+
+        rows = new ArrayList<SettingsRow>();
+        adapter = new SettingsAdapter(c, R.layout.settings_row, rows);
+        setListAdapter(adapter);
+
+        createRows();
+
         topicGenerator = new TopicGenerator(this.c);
         setHasOptionsMenu(true);
 
         scaleGestureDetector = new ScaleGestureDetector(c, new ScaleListener());
+        viewAnimator = (ViewAnimator)rootView.findViewById(R.id.viewAnimator);
+        viewAnimator.addView(sentenceView);
+        viewAnimator.addView(settingsView);
 
-        View rootView = inflater.inflate(R.layout.section_wins, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.textViewWins);
-        if (customSubject != ""){
+        TextView textView = (TextView) sentenceView.findViewById(R.id.textViewSentence);
         textView.setText(topicGenerator.generateTopic(2));
-        } else {
-            textView.setText(topicGenerator.generateTopic(2, customSubject));
-        }
 
         sentence = textView.getText().toString();
         textView.setOnTouchListener(touchListener);
@@ -54,7 +71,7 @@ public class SectionWins extends Fragment {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             int eventAction = event.getAction();
-            TextView textView = (TextView) v.findViewById(R.id.textViewWins);
+            TextView textView = (TextView) v.findViewById(R.id.textViewSentence);
 
             scaleGestureDetector.onTouchEvent(event);
 
@@ -64,7 +81,7 @@ public class SectionWins extends Fragment {
                     if (customSubject == ""){
                         textView.setText(topicGenerator.generateTopic(2));
                     } else {
-                        textView.setText(topicGenerator.generateTopic(2, customSubject));
+                     //   textView.setText(topicGenerator.generateTopic(2, customSubject));
                     }
                     sentence = textView.getText().toString();
                     break;
@@ -77,6 +94,21 @@ public class SectionWins extends Fragment {
             return true;  //To change body of implemented methods use File | Settings | File Templates.
         }
     };
+
+    private void createRows(){
+
+        SettingsRow row;
+        row = new SettingsRow("If", "Modifier", "", "arena_mode", true);
+        rows.add(row);
+
+        if (rows != null && rows.size() > 0){
+            adapter.notifyDataSetChanged();
+            for (int i = 0; i < rows.size(); i++){
+                adapter.add(rows.get(i));
+            }
+        }
+        adapter.notifyDataSetChanged();
+    }
 
     public void share (){
 
@@ -104,7 +136,7 @@ public class SectionWins extends Fragment {
         alert.setPositiveButton("Set", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 customSubject = String.valueOf(input.getText());
-                textView.setText(topicGenerator.generateTopic(2, customSubject));
+               // textView.setText(topicGenerator.generateTopic(2, customSubject));
             }
         });
 
@@ -138,7 +170,7 @@ public class SectionWins extends Fragment {
                 share();
                 return true;
             case R.id.settings:
-                getTextDialog();
+                viewAnimator.showNext();
                 return true;
             default:
                 return true;

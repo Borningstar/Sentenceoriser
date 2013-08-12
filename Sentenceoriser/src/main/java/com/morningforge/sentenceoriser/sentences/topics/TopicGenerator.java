@@ -87,34 +87,4 @@ public class TopicGenerator {
 
         return sentence;
     }
-
-    //Generates a specific topic with a custom subject
-    public String generateTopic(int type, String customSubject){
-
-        String sentence = null;
-
-        if (type < 0){
-            type = 0;
-        }
-
-        switch (type){
-            case 0:
-                sentenceType = "Random";
-                switch (randomiser(0, 2)){
-                    case 0: sentence = topicTrapped.generateTopic();;
-                        break;
-                    case 1: sentence = topicWins.generateTopic(customSubject);
-                        break;
-                }
-                break;
-            case 1: sentence = topicTrapped.generateTopic();;
-                sentenceType = "You're trapped...";
-                break;
-            case 2: sentence = topicWins.generateTopic(customSubject);
-                sentenceType = "Does " + customSubject + " Win?";
-                break;
-
-        }
-        return sentence;
-    }
 }

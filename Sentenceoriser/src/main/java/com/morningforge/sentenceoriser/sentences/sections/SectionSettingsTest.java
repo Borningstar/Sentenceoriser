@@ -66,10 +66,10 @@ public class SectionSettingsTest extends ListFragment {
     private void createRows(){
 
         SettingsRow row;
-        row = new SettingsRow("Test", "arena_mode", "Test");
-        rows.add(row);
-        row = new SettingsRow("Test 2", "situation_mode","Test woot");
-        rows.add(row);
+    //    row = new SettingsRow("Test", "arena_mode", "Test");
+    //    rows.add(row);
+     //   row = new SettingsRow("Test 2", "situation_mode","Test woot");
+     //   rows.add(row);
 
         if (rows != null && rows.size() > 0){
             adapter.notifyDataSetChanged();
