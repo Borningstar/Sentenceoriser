@@ -1,6 +1,8 @@
 package com.morningforge.sentenceoriser.sentences.topics;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import com.morningforge.sentenceoriser.sentences.WordArray;
 
 import java.util.Random;
@@ -18,14 +20,16 @@ public class TopicWins {
     private WordArray subjects;
     private WordArray modifiers;
     private WordArray objects;
+    Context context;
 
-    private String ad1Modifier, ad1Weapon, ad1,
+    private String ad1Weapon,
             ad2Modifier, ad2Weapon, ad2;
 
-    private Boolean ad1ModifierActive, ad1WeaponActive,
+
+    private Boolean ad1WeaponActive,
             ad2ModifierActive, ad2WeaponActive;
 
-    private Boolean ad1ModifierCustom, ad1WeaponCustom, ad1Custom,
+    private Boolean ad1WeaponCustom, ad1Custom,
             ad2ModifierCustom, ad2WeaponCustom, ad2Custom;
 
     //Initiatise the WordArrays using specific files
@@ -34,23 +38,21 @@ public class TopicWins {
         modifiers = new WordArray(context, "WinsModifiers");
         objects = new WordArray(context, "WinsObjects");
 
-        ad1ModifierActive = true;
         ad1WeaponActive = true;
-        ad1ModifierActive = true;
 
         ad2ModifierActive = true;
         ad2WeaponActive = true;
         ad2ModifierActive = true;
 
-        ad1ModifierCustom = false;
         ad1WeaponCustom = false;
-        ad1ModifierCustom = false;
         ad1Custom = false;
 
         ad2ModifierCustom = false;
         ad2WeaponCustom = false;
         ad2ModifierCustom = false;
         ad2Custom = false;
+
+        this.context = context;
     }
 
     //Generates a random number between min and max
@@ -82,9 +84,17 @@ public class TopicWins {
         then who would win?
          */
 
-        if (!ad1ModifierCustom){ad1Modifier = modifiers.getWord();}
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+
+        String ad1ModifierMode = settings.getString("ad1ModifierMode", "ad1ModifierMode");
+        String ad1Modifier = settings.getString("ad1Modifier", "ad1Modifier");
+
+        String ad1Mode = settings.getString("ad1Mode", "ad1Mode");
+        String ad1 = settings.getString("ad1", "ad1");
+
+        if (ad1ModifierMode != "CUSTOM"){ad1Modifier = modifiers.getWord();}
         if (!ad1WeaponCustom){ad1Weapon = objects.getWord();}
-        if (!ad1Custom){ad1 = subjects.getWord();}
+        if (ad1Mode != "CUSTOM"){ad1 = subjects.getWord();}
         if (!ad2ModifierCustom){ad2Modifier = modifiers.getWord();}
         if (!ad2WeaponCustom){ad2Weapon = objects.getWord();}
         if (!ad2Custom){ad2 = subjects.getWord();}
@@ -93,7 +103,7 @@ public class TopicWins {
 
         //Construct first half of sentence
         //50% chance of a modifier being used
-        if ((randomiser(1, 2) == 1) && ad1ModifierActive){
+        if ((randomiser(1, 2) == 1) && (ad1ModifierMode != "OFF")){
             sentence = sentence + ad1Modifier + " ";
         }
         //Set participant
@@ -122,16 +132,8 @@ public class TopicWins {
         return sentence;
     }
 
-    public void setAd1Modifier(String ad1Modifier) {
-        this.ad1Modifier = ad1Modifier;
-    }
-
     public void setAd1Weapon(String ad1Weapon) {
         this.ad1Weapon = ad1Weapon;
-    }
-
-    public void setAd1(String ad1) {
-        this.ad1 = ad1;
     }
 
     public void setAd2Modifier(String ad2Modifier) {
@@ -146,10 +148,6 @@ public class TopicWins {
         this.ad2 = ad2;
     }
 
-    public void setAd1ModifierActive(Boolean ad1ModifierActive) {
-        this.ad1ModifierActive = ad1ModifierActive;
-    }
-
     public void setAd1WeaponActive(Boolean ad1WeaponActive) {
         this.ad1WeaponActive = ad1WeaponActive;
     }
@@ -160,10 +158,6 @@ public class TopicWins {
 
     public void setAd2WeaponActive(Boolean ad2WeaponActive) {
         this.ad2WeaponActive = ad2WeaponActive;
-    }
-
-    public void setAd1ModifierCustom(Boolean ad1ModifierCustom) {
-        this.ad1ModifierCustom = ad1ModifierCustom;
     }
 
     public void setAd1WeaponCustom(Boolean ad1WeaponCustom) {

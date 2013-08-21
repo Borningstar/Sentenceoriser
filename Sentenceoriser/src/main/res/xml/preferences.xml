@@ -24,11 +24,25 @@
         android:title="Who Wins">
 
         <TextPreference
-                android:title="Situation Mode"
-                android:key="situation_mode"
-                android:defaultValue="0"
+                android:title="Adversary 1 Modifier"
+                android:key="ad1Modifier"
+                android:defaultValue="Test"
                 />
-
+        <TextPreference
+                android:title="Adversary 1 Modifier Mode"
+                android:key="ad1ModifierMode"
+                android:defaultValue="ON"
+                />
+        <TextPreference
+                android:title="Adversary 1"
+                android:key="ad1"
+                android:defaultValue="Test"
+                />
+        <TextPreference
+                android:title="Adversary 1 Mode"
+                android:key="ad1Mode"
+                android:defaultValue="ON"
+                />
 
         </PreferenceCategory>
 

@@ -5,15 +5,20 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:gravity="center"
         android:background="@color/background">
 
-    <ListView
+    <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@android:id/list"
-            android:dividerHeight="@dimen/border_margin"
-            android:footerDividersEnabled="true"
-            android:headerDividersEnabled="true"
-            android:layout_gravity="center_vertical"/>
+            android:layout_height="fill_parent">
+
+        <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@android:id/list"
+                android:dividerHeight="@dimen/border_margin"
+                android:footerDividersEnabled="true"
+                android:headerDividersEnabled="true"
+                android:layout_gravity="center_vertical"
+                android:layout_centerInParent="true"/>
+    </RelativeLayout>
 </LinearLayout>

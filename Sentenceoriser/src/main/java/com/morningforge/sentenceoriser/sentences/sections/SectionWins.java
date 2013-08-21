@@ -98,7 +98,9 @@ public class SectionWins extends ListFragment {
     private void createRows(){
 
         SettingsRow row;
-        row = new SettingsRow("If", "Modifier", "", "arena_mode", true);
+        row = new SettingsRow("If", "Modifier", "", "ad1Modifier", true, true);
+        rows.add(row);
+        row = new SettingsRow("", "Adversary 1", "", "ad1", true, false);
         rows.add(row);
 
         if (rows != null && rows.size() > 0){

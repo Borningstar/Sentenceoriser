@@ -10,13 +10,15 @@ public class SettingsRow {
     private String sentence2;
     private int mode = 0; //ON, CUSTOM, OFF
     private boolean changeable;
+    private boolean canDisable;
 
-    public SettingsRow(String sentence, String word, String sentence2, String preferencesID, boolean changeable){
+    public SettingsRow(String sentence, String word, String sentence2, String preferencesID, boolean changeable, boolean canCustomise){
         this.word = word;
         this.sentence = sentence;
         this.sentence2 = sentence2;
         this.preferencesID = preferencesID;
         this.changeable = changeable;
+        this.canDisable = canCustomise;
     };
 
     public String getWord() {
@@ -52,5 +54,13 @@ public class SettingsRow {
 
     public boolean isChangeable() {
         return changeable;
+    }
+
+    public boolean isCanDisable() {
+        return canDisable;
+    }
+
+    public String getSentence2() {
+        return sentence2;
     }
 }
