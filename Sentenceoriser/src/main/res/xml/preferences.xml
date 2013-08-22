@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategorye
+    <PreferenceCategory
         android:title="You're Trapped"
         android:key="you're_trapped">
 
@@ -18,7 +18,7 @@
             android:defaultValue="0"
         />
 
-        </PreferenceCategorye>
+        </PreferenceCategory>
 
     <PreferenceCategory
         android:title="Who Wins">
@@ -34,6 +34,16 @@
                 android:defaultValue="ON"
                 />
         <TextPreference
+                android:title="Adversary 1 Weapon Mode"
+                android:key="ad1WeaponMode"
+                android:defaultValue="ON"
+                />
+        <TextPreference
+                android:title="Adversary 1 Weapon"
+                android:key="ad1Weapon"
+                android:defaultValue="Test"
+                />
+        <TextPreference
                 android:title="Adversary 1"
                 android:key="ad1"
                 android:defaultValue="Test"
@@ -41,6 +51,37 @@
         <TextPreference
                 android:title="Adversary 1 Mode"
                 android:key="ad1Mode"
+                android:defaultValue="ON"
+                />
+
+        <TextPreference
+                android:title="Adversary 2 Modifier"
+                android:key="ad2Modifier"
+                android:defaultValue="Test"
+                />
+        <TextPreference
+                android:title="Adversary 2 Modifier Mode"
+                android:key="ad2ModifierMode"
+                android:defaultValue="ON"
+                />
+        <TextPreference
+                android:title="Adversary 2 Weapon Mode"
+                android:key="ad2WeaponMode"
+                android:defaultValue="ON"
+                />
+        <TextPreference
+                android:title="Adversary 2 Weapon"
+                android:key="ad2Weapon"
+                android:defaultValue="Test"
+                />
+        <TextPreference
+                android:title="Adversary 2"
+                android:key="ad2"
+                android:defaultValue="Test"
+                />
+        <TextPreference
+                android:title="Adversary 2 Mode"
+                android:key="ad2Mode"
                 android:defaultValue="ON"
                 />
 

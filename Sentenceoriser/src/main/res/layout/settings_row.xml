@@ -6,7 +6,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/settingsRowLayout"
         android:baselineAligned="false"
-        android:background="@color/row_background"
+        android:background="@color/background"
         android:gravity="center"
         >
 
@@ -24,7 +24,6 @@
             android:inputType="text"
             android:id="@+id/settingsEditWord"
             android:hint="Test"
-            android:phoneNumber="false"
             style="@android:style/Theme.Black"
             android:textColor="@color/Black"
             android:visibility="gone"/>

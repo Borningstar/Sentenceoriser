@@ -2,7 +2,8 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
-              android:layout_height="fill_parent" >
+              android:layout_height="fill_parent"
+              android:background="@color/background">
           <!--    android:background="#F9EEFF"-->
 
 
@@ -13,6 +14,7 @@
             android:text="Layout 1"
             android:textSize="20dp" android:layout_weight="1" android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="#2DC800"/>
+            android:textColor="#2DC800"
+            android:background="@color/background"/>
 
 </LinearLayout>

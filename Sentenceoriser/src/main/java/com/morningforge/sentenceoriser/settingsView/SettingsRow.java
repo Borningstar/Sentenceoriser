@@ -19,7 +19,7 @@ public class SettingsRow {
         this.preferencesID = preferencesID;
         this.changeable = changeable;
         this.canDisable = canCustomise;
-    };
+    }
 
     public String getWord() {
         return word;

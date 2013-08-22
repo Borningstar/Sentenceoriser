@@ -18,7 +18,6 @@ import java.util.ArrayList;
  * Created by Ben on 7/08/13.
  */
 public class SettingsAdapter extends ArrayAdapter<SettingsRow> {
-    private Context context;
     private ArrayList<SettingsRow> rows;
 
     public SettingsAdapter(Context context, int textViewResourceId, ArrayList<SettingsRow> rows) {
@@ -28,7 +27,7 @@ public class SettingsAdapter extends ArrayAdapter<SettingsRow> {
     }
 
     public View getView(int i, View view, ViewGroup viewGroup) {
-        context = getContext();
+        Context context = getContext();
         if (view == null) {
             LayoutInflater infalInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             view = infalInflater.inflate(R.layout.settings_row, null);
@@ -73,7 +72,6 @@ public class SettingsAdapter extends ArrayAdapter<SettingsRow> {
 
                                 preferencesEditor.putString(row.getPreferencesID() + "Mode", "CUSTOM");
 
-
                                 break;
                             case 2:
                                 word.setVisibility(View.VISIBLE);
@@ -100,7 +98,6 @@ public class SettingsAdapter extends ArrayAdapter<SettingsRow> {
                 public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                     preferencesEditor.putString(row.getPreferencesID(), editWord.getText().toString());
                     preferencesEditor.commit();
-
                 }
 
                 @Override

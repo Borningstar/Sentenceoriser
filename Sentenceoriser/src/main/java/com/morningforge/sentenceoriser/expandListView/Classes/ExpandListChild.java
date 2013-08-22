@@ -12,7 +12,7 @@ public class ExpandListChild {
     public ExpandListChild(String sentence, String modeSettings){
         this.sentence = sentence;
         this.modeSettings = modeSettings;
-    };
+    }
 
     public String getModeSettings(){
         return modeSettings;

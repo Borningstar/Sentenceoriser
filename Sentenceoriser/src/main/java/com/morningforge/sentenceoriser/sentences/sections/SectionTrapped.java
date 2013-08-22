@@ -19,7 +19,6 @@ public class SectionTrapped extends Fragment {
     private String sentence;
     ScaleGestureDetector scaleGestureDetector;
     private ViewSwitcher viewSwitcher;
-    private View rootView;
 
     private TopicTrapped topicTrapped;
 
@@ -36,7 +35,7 @@ public class SectionTrapped extends Fragment {
 
         topicTrapped = new TopicTrapped(this.c);
 
-        rootView = inflater.inflate(R.layout.section_trapped, container, false);
+        View rootView = inflater.inflate(R.layout.section_trapped, container, false);
         viewSwitcher = (ViewSwitcher)rootView.findViewById(R.id.viewSwitcher2);
 
         setHasOptionsMenu(true);

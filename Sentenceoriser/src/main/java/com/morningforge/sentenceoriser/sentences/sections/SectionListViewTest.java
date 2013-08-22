@@ -20,9 +20,6 @@ import java.util.ArrayList;
 public class SectionListViewTest extends Fragment {
 
     /** Called when the activity is first created. */
-    private ExpandListAdapter ExpAdapter;
-    private ArrayList<ExpandListGroup> ExpListItems;
-    private ExpandableListView ExpandList;
     private Context c;
 
     public SectionListViewTest(Context c){
@@ -34,9 +31,9 @@ public class SectionListViewTest extends Fragment {
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View rootView = inflater.inflate(R.layout.listviewlayout, container, false);
-        ExpandList = (ExpandableListView) rootView.findViewById(R.id.ExpList);
-        ExpListItems = SetStandardGroups();
-        ExpAdapter = new ExpandListAdapter(c, ExpListItems);
+        ExpandableListView ExpandList = (ExpandableListView) rootView.findViewById(R.id.ExpList);
+        ArrayList<ExpandListGroup> ExpListItems = SetStandardGroups();
+        ExpandListAdapter ExpAdapter = new ExpandListAdapter(c, ExpListItems);
         ExpandList.setAdapter(ExpAdapter);
 
         return rootView;

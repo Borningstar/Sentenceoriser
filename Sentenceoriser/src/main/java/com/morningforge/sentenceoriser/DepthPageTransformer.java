@@ -7,10 +7,10 @@ import android.view.View;
  * Created by Ben on 14/06/13.
  */
 public class DepthPageTransformer implements ViewPager.PageTransformer {
-    private static float MIN_SCALE = 0.75f;
 
     public void transformPage(View view, float position) {
         int pageWidth = view.getWidth();
+        float MIN_SCALE = 0.75f;
 
         if (position < -1) { // [-Infinity,-1)
             // This page is way off-screen to the left.

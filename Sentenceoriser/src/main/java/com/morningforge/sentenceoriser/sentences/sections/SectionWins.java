@@ -78,10 +78,8 @@ public class SectionWins extends ListFragment {
             switch (eventAction){
                 case MotionEvent.ACTION_UP:
                     textView.setVisibility(TextView.VISIBLE);
-                    if (customSubject == ""){
+                    if (customSubject.equals("")){
                         textView.setText(topicGenerator.generateTopic(2));
-                    } else {
-                     //   textView.setText(topicGenerator.generateTopic(2, customSubject));
                     }
                     sentence = textView.getText().toString();
                     break;
@@ -98,9 +96,19 @@ public class SectionWins extends ListFragment {
     private void createRows(){
 
         SettingsRow row;
-        row = new SettingsRow("If", "Modifier", "", "ad1Modifier", true, true);
+        row = new SettingsRow("If ", "Modifier", "", "ad1Modifier", true, true);
         rows.add(row);
         row = new SettingsRow("", "Adversary 1", "", "ad1", true, false);
+        rows.add(row);
+        row = new SettingsRow("used ", "Weapon", " to fight", "ad1Weapon", true, true);
+        rows.add(row);
+        row = new SettingsRow("", "Modifier", "", "ad2Modifier", true, true);
+        rows.add(row);
+        row = new SettingsRow("", "Adversary 2", "", "ad2", true, false);
+        rows.add(row);
+        row = new SettingsRow("Who's armed with ", "Weapon", "", "ad2Weapon", true, true);
+        rows.add(row);
+        row = new SettingsRow("... Then who would win?", "", "", "", false, false);
         rows.add(row);
 
         if (rows != null && rows.size() > 0){
