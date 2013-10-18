@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<RelativeLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -9,13 +9,18 @@
 
     <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="true"
+            >
 
         <ListView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@android:id/list"
                 android:layout_centerInParent="true"
-                />
+                android:smoothScrollbar="true"
+                android:footerDividersEnabled="false"/>
     </RelativeLayout>
-</LinearLayout>
+
+</RelativeLayout>

@@ -28,5 +28,6 @@
     <string name="custom">Custom</string>
     <string name="customised">Customised</string>
     <string name="arrow">arrow</string>
+    <string name="done">Done</string>
 
 </resources>

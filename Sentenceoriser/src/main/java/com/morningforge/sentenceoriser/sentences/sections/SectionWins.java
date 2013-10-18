@@ -3,14 +3,11 @@ package com.morningforge.sentenceoriser.sentences.sections;
 /**
  * Created by Ben on 23/05/13.
 **/
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.*;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ViewAnimator;
 
@@ -24,15 +21,13 @@ import java.util.ArrayList;
 
 public class SectionWins extends ListFragment {
     Context c;
-
-    private TopicGenerator topicGenerator;
-    private String sentence;
     private String customSubject = "";
     private ViewAnimator viewAnimator;
     ScaleGestureDetector scaleGestureDetector;
     private ArrayList<SettingsRow> rows = null;
     private SettingsAdapter adapter;
-
+    private TopicGenerator topicGenerator;
+    private String sentence;
     public SectionWins(Context c) {
         this.c = c;
     }
@@ -64,7 +59,13 @@ public class SectionWins extends ListFragment {
 
         sentence = textView.getText().toString();
         textView.setOnTouchListener(touchListener);
+
         return rootView;
+    }
+
+    public void onBackPressed(ViewAnimator vA){
+        vA.showNext();
+        MainActivity.setSettingsActive();
     }
 
     private View.OnTouchListener touchListener = new View.OnTouchListener() {
@@ -96,15 +97,15 @@ public class SectionWins extends ListFragment {
     private void createRows(){
 
         SettingsRow row;
-        row = new SettingsRow("If ", "Modifier", "", "ad1Modifier", true, true);
+        row = new SettingsRow("If ", "Adjective", "", "ad1Modifier", true, true);
         rows.add(row);
-        row = new SettingsRow("", "Adversary 1", "", "ad1", true, false);
+        row = new SettingsRow("", "Adversary", "", "ad1", true, false);
         rows.add(row);
         row = new SettingsRow("used ", "Weapon", " to fight", "ad1Weapon", true, true);
         rows.add(row);
-        row = new SettingsRow("", "Modifier", "", "ad2Modifier", true, true);
+        row = new SettingsRow("", "Adjective", "", "ad2Modifier", true, true);
         rows.add(row);
-        row = new SettingsRow("", "Adversary 2", "", "ad2", true, false);
+        row = new SettingsRow("", "Adversary", "", "ad2", true, false);
         rows.add(row);
         row = new SettingsRow("Who's armed with ", "Weapon", "", "ad2Weapon", true, true);
         rows.add(row);
@@ -129,37 +130,6 @@ public class SectionWins extends ListFragment {
         startActivity(sendIntent);
     }
 
-    private void getTextDialog(){
-
-        View v = this.getView();
-        final TextView textView = (TextView) v.findViewById(R.id.textViewWins);
-
-        AlertDialog.Builder alert = new AlertDialog.Builder(c);
-
-        alert.setTitle("Set the protagonist");
-
-
-        final EditText input = new EditText(c);
-        input.setText(customSubject);
-        alert.setView(input);
-
-        alert.setPositiveButton("Set", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                customSubject = String.valueOf(input.getText());
-               // textView.setText(topicGenerator.generateTopic(2, customSubject));
-            }
-        });
-
-        alert.setNegativeButton("Reset", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                customSubject = "";
-                textView.setText(topicGenerator.generateTopic(2));
-            }
-        });
-
-        alert.show();
-    }
-
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
         @Override
         public boolean onScale(ScaleGestureDetector detector) {
@@ -170,7 +140,7 @@ public class SectionWins extends ListFragment {
 
     @Override
     public void onCreateOptionsMenu( Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.section_wins_menu, menu);
+        inflater.inflate(R.menu.section_menu, menu);
     }
 
     @Override
@@ -181,6 +151,8 @@ public class SectionWins extends ListFragment {
                 return true;
             case R.id.settings:
                 viewAnimator.showNext();
+                MainActivity.setViewAnimator(viewAnimator);
+                MainActivity.setSettingsActive();
                 return true;
             default:
                 return true;
