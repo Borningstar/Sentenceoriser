@@ -85,7 +85,7 @@ public class TopicWins {
 
         //Construct first half of sentence
         //50% chance of a modifier being used
-        if ((randomiser(1, 2) == 1) && (!ad1ModifierMode.equals("OFF"))){
+         if ((randomiser(1, 2) == 1) && (!ad1ModifierMode.equals("OFF"))){
             sentence = sentence + ad1Modifier + " ";
         }
         //Set participant

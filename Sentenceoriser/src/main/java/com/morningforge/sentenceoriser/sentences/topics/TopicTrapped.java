@@ -20,8 +20,12 @@ public class TopicTrapped {
     private WordArray situationArray;
     private WordArray companionArray;
 
-    public WordStatus arena = new WordStatus(), equipment1 = new WordStatus(), equipment2 = new WordStatus(),
-            equipment3 = new WordStatus(), situation = new WordStatus(), companion = new WordStatus();
+    public WordStatus arena = new WordStatus(),
+            equipment1 = new WordStatus(),
+            equipment2 = new WordStatus(),
+            equipment3 = new WordStatus(),
+            situation = new WordStatus(),
+            companion = new WordStatus();
 
     private int numEquip;
 

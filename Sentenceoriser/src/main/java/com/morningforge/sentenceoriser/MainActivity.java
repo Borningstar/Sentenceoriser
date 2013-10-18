@@ -9,8 +9,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.widget.ViewAnimator;
+
 import com.morningforge.sentenceoriser.sentences.sections.*;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
@@ -25,11 +28,47 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      */
     SectionsPagerAdapter mSectionsPagerAdapter;
 
+    private SectionWins sectionWins = new SectionWins(MainActivity.this);
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
+    static private boolean settingsActive;
+    static private ViewAnimator viewAnimator;
+
     CustomViewPager mViewPager;
+
+    private ArrayList<Integer> history = new ArrayList();
+
+    public void addHistory (int position){
+        if (getHistorySize() == 0){
+            history.add(position);
+        } else if (getLastestHistory() != position){
+            history.add(position);
+        }
+    }
+
+    public void removeHistory(){
+        history.remove(history.size() - 1);
+        history.trimToSize();
+    }
+
+    public int getHistorySize(){
+        return history.size();
+    }
+
+    public int getLastestHistory(){
+        return history.get(getHistorySize() - 1);
+    }
+
+    static public void setSettingsActive(){
+        if (settingsActive){
+            settingsActive = false;
+        } else {
+            settingsActive = true;
+        }
+    }
+
+    static public void setViewAnimator(ViewAnimator vA){
+        viewAnimator = vA;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +78,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
         actionBar.setTitle("");
+
+        addHistory(0);
 
       //  actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
@@ -58,28 +99,44 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-              //  actionBar.setSelectedNavigationItem(position);
+                addHistory(position);
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        if (mViewPager.getCurrentItem() == 0) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
-            super.onBackPressed();
+        if (settingsActive){
+            switch (getLastestHistory()){
+                case 0:
+
+                case 1:
+
+                case 2:
+                    sectionWins.onBackPressed(viewAnimator);
+                case 3:
+
+                case 4:
+
+                case 5:
+            }
         } else {
-            // Otherwise, select the previous step.
-            mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
-            setViewPagerSwipe(true);
+            if (getHistorySize() <= 1) {
+                // If the user is currently looking at the first step, allow the system to handle the
+                // Back button. This calls finish() on this activity and pops the back stack.
+                removeHistory();
+                super.onBackPressed();
+            } else {
+                // Otherwise, select the previous step.
+                removeHistory();
+                mViewPager.setCurrentItem(getLastestHistory());
+                setViewPagerSwipe(true);
+            }
         }
     }
 
     public void setCurrentPagerItem(int item) {
-        mViewPager.setPageTransformer(false, new DepthPageTransformer());
-        mViewPager.setCurrentItem(item);
-        mViewPager.setPageTransformer(true, new DepthPageTransformer());
+        mViewPager.setCurrentItem(item, false);
     }
 
     public void setViewPagerSwipe(boolean enabled){
@@ -116,12 +173,18 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         @Override
         public Fragment getItem(int position) {
             switch (position){
-                case 0: return new SectionGrid(c);
-                case 1: return new SectionRand(c);
-                case 2: return new SectionWins(c);
-                case 3: return new SectionTrapped(c);
-                case 4: return new SectionDescribe(c);
-                case 5: return new SectionSettingsTest(c);
+                case 0:
+                    return new SectionGrid(c);
+                case 1:
+                    return new SectionRand(c);
+                case 2:
+                    return new SectionWins(c);
+                case 3:
+                    return new SectionTrapped(c);
+                case 4:
+                    return new SectionDescribe(c);
+                case 5:
+                    return new SectionSettingsTest(c);
                 default: return new SectionGrid(c);
             }
         }

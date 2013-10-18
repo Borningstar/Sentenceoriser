@@ -2,13 +2,16 @@
 
 <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="80px"
+        android:layout_height="wrap_content"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/settingsRowLayout"
         android:baselineAligned="false"
         android:background="@color/background"
         android:gravity="center"
-        >
+        android:clickable="true"
+        android:focusable="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
     <TextView
             android:layout_width="wrap_content"
@@ -25,7 +28,7 @@
             android:id="@+id/settingsEditWord"
             android:hint="Test"
             style="@android:style/Theme.Black"
-            android:textColor="@color/Black"
+            android:textColor="@color/options_toggle"
             android:visibility="gone"/>
 
     <TextView
@@ -33,7 +36,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/settingsTextWord"
             android:text="Sentence"
-            android:textColor="@color/Black"
+            android:textColor="@color/options_toggle"
             android:textSize="@dimen/settings_text_size"/>
 
     <TextView

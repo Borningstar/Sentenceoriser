@@ -7,7 +7,7 @@
 
         <ListPreference
             android:title="Arena Mode"
-            android:key="arena_mode"
+            android:key="arenaMode"
             android:defaultValue="ON"
             android:entries="@array/modeArray"
             />
