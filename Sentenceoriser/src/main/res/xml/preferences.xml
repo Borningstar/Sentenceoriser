@@ -5,18 +5,77 @@
         android:title="You're Trapped"
         android:key="you're_trapped">
 
-        <ListPreference
+        <TextPreference
+                android:title="Arena"
+                android:key="arena"
+                android:defaultValue="Arena"
+                />
+
+        <TextPreference
             android:title="Arena Mode"
             android:key="arenaMode"
             android:defaultValue="ON"
-            android:entries="@array/modeArray"
             />
 
         <TextPreference
+                android:title="Equipment 1"
+                android:key="equipment1"
+                android:defaultValue="Equipment"
+                />
+
+        <TextPreference
+                android:title="Equipment 1 Mode"
+                android:key="equipment1Mode"
+                android:defaultValue="ON"
+                />
+
+        <TextPreference
+                android:title="Equipment 2"
+                android:key="equipment2"
+                android:defaultValue="Equipment"
+                />
+
+        <TextPreference
+                android:title="Equipment 2"
+                android:key="equipment2Mode"
+                android:defaultValue="ON"
+                />
+
+        <TextPreference
+                android:title="Equipment 3"
+                android:key="equipment3"
+                android:defaultValue="Equipment"
+                />
+
+        <TextPreference
+                android:title="Equipment 3"
+                android:key="equipment3Mode"
+                android:defaultValue="ON"
+                />
+
+        <TextPreference
+                android:title="Situation"
+                android:key="situation"
+                android:defaultValue="Situation"
+                />
+
+        <TextPreference
             android:title="Situation Mode"
-            android:key="situation_mode"
-            android:defaultValue="0"
+            android:key="situationMode"
+            android:defaultValue="ON"
         />
+
+        <TextPreference
+                android:title="Companion"
+                android:key="companion"
+                android:defaultValue="Companion"
+                />
+
+        <TextPreference
+                android:title="Companion"
+                android:key="companionMode"
+                android:defaultValue="ON"
+                />
 
         </PreferenceCategory>
 

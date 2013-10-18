@@ -52,18 +52,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99489e97-132b-4ad1-b37c-24e4a3a5951f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionWins.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Ben\Dropbox\Projects\Sentenceoriser\Sentenceoriser\src\main\res\menu\section_wins_menu.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/settingsView/SettingsAdapter.java" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/settingsView/SettingsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/settingsView/SettingsRow.java" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/settingsView/SettingsRow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicTrapped.java" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicTrapped.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicWins.java" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicWins.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/settings_layout.xml" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/settings_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/settings_row.xml" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/settings_row.xml" />
     </list>
     <ignored path="Sentenceoriser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -137,7 +127,67 @@
     <favorites_list name="Sentenceoriser" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="preferences.xml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="56" column="41" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1513">
+                  <folding>
+                    <element signature="tag#PreferenceCategory#1;tag#PreferenceScreen#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TopicTrapped.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicTrapped.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="99" column="55" selection-start="3492" selection-end="3492" vertical-scroll-proportion="0.0" vertical-offset="1074" max-vertical-offset="2329">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SectionTrapped.java" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionTrapped.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="122" column="22" selection-start="4668" selection-end="4668" vertical-scroll-proportion="-1.0259067" vertical-offset="2413" max-vertical-offset="3298">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="TopicWins.java" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicWins.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="24" column="52" selection-start="643" selection-end="643" vertical-scroll-proportion="0.6891892" vertical-offset="0" max-vertical-offset="2074">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SectionWins.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionWins.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="138" column="5" selection-start="5052" selection-end="5052" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="2533">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -156,7 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionSettingsTest.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/expandListView/Classes/ExpandListChild.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/DepthPageTransformer.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionListViewTest.java" />
@@ -170,8 +219,9 @@
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/settingsView/SettingsRow.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/settings_row.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/settings_layout.xml" />
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicWins.java" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicTrapped.java" />
       </list>
     </option>
   </component>
@@ -179,10 +229,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="-1928" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -901,8 +951,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="false" />
+    <frame x="-1928" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3222958" sideWeight="0.7963753" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -921,8 +971,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.64922047" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18890075" sideWeight="0.64365256" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35634744" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19536424" sideWeight="0.65884864" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3411514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1022,57 +1072,12 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/settings_row.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="867">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/sentence_text.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="39" selection-start="2409" selection-end="2409" vertical-scroll-proportion="0.32246378" vertical-offset="1063" max-vertical-offset="1615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicWins.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="2402" selection-end="2411" vertical-scroll-proportion="0.030797102" vertical-offset="1173" max-vertical-offset="1989">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="36" selection-start="2065" selection-end="2065" vertical-scroll-proportion="0.092391305" vertical-offset="867" max-vertical-offset="3519">
           <folding>
-            <element signature="e#3192#3375#0" expanded="true" />
-            <element signature="e#3364#3365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionWins.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="5" selection-start="5052" selection-end="5052" vertical-scroll-proportion="3.6032608" vertical-offset="0" max-vertical-offset="2465">
-          <folding>
-            <element signature="e#2439#3467#0" expanded="true" />
-            <element signature="e#3460#3461#0" expanded="true" />
-            <element signature="method#share#0;class#SectionWins#0" expanded="false" />
+            <element signature="e#3192#3375#0" expanded="false" />
+            <element signature="e#3364#3365#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1095,15 +1100,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="0" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.030797102" vertical-offset="629" max-vertical-offset="1496">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/WordStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="646">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1146,6 +1144,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="13" selection-start="490" selection-end="490" vertical-scroll-proportion="0.2155797" vertical-offset="0" max-vertical-offset="1683">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/res/xml/preferences.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="41" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1513">
+          <folding>
+            <element signature="tag#PreferenceCategory#1;tag#PreferenceScreen#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/WordStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="21" selection-start="308" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicTrapped.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="55" selection-start="3492" selection-end="3492" vertical-scroll-proportion="0.0" vertical-offset="1074" max-vertical-offset="2329">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionWins.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="5" selection-start="5052" selection-end="5052" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="2533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/sections/SectionTrapped.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="22" selection-start="4668" selection-end="4668" vertical-scroll-proportion="-1.0259067" vertical-offset="2413" max-vertical-offset="3298">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/sentences/topics/TopicWins.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="52" selection-start="643" selection-end="643" vertical-scroll-proportion="0.6891892" vertical-offset="0" max-vertical-offset="2074">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
