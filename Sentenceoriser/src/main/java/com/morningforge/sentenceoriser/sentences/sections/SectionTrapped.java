@@ -6,25 +6,28 @@ package com.morningforge.sentenceoriser.sentences.sections;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v4.app.ListFragment;
 import android.view.*;
-import android.widget.*;
+import android.widget.TextView;
+import android.widget.ViewAnimator;
+
 import com.morningforge.sentenceoriser.MainActivity;
 import com.morningforge.sentenceoriser.R;
-import com.morningforge.sentenceoriser.sentences.topics.TopicTrapped;
+import com.morningforge.sentenceoriser.sentences.topics.TopicGenerator;
+import com.morningforge.sentenceoriser.settingsView.SettingsAdapter;
+import com.morningforge.sentenceoriser.settingsView.SettingsRow;
 
-public class SectionTrapped extends Fragment {
+import java.util.ArrayList;
+
+public class SectionTrapped extends ListFragment {
     Context c;
-    private String sentence;
+    private String customSubject = "";
+    private ViewAnimator viewAnimator;
     ScaleGestureDetector scaleGestureDetector;
-    private ViewSwitcher viewSwitcher;
-
-    private TopicTrapped topicTrapped;
-
-    public SectionTrapped(){
-
-    }
+    private ArrayList<SettingsRow> rows = null;
+    private SettingsAdapter adapter;
+    private TopicGenerator topicGenerator;
+    private String sentence;
     public SectionTrapped(Context c) {
         this.c = c;
     }
@@ -33,109 +36,52 @@ public class SectionTrapped extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        topicTrapped = new TopicTrapped(this.c);
+        View settingsView = inflater.inflate(R.layout.settings_layout, container, false);
+        View sentenceView = inflater.inflate(R.layout.sentence_text, container, false);
+        View rootView = inflater.inflate(R.layout.sentence_layout, container, false);
 
-        View rootView = inflater.inflate(R.layout.section_trapped, container, false);
-        viewSwitcher = (ViewSwitcher)rootView.findViewById(R.id.viewSwitcher2);
+        rows = new ArrayList<SettingsRow>();
+        adapter = new SettingsAdapter(c, R.layout.settings_row, rows);
+        setListAdapter(adapter);
 
+        createRows();
+
+        topicGenerator = new TopicGenerator(this.c);
         setHasOptionsMenu(true);
 
         scaleGestureDetector = new ScaleGestureDetector(c, new ScaleListener());
+        viewAnimator = (ViewAnimator)rootView.findViewById(R.id.viewAnimator);
+        viewAnimator.addView(sentenceView);
+        viewAnimator.addView(settingsView);
 
-        TextView textView = (TextView) rootView.findViewById(R.id.textViewTrapped);
-        textView.setText(topicTrapped.generateTopic());
+        TextView textView = (TextView) sentenceView.findViewById(R.id.textViewSentence);
+        textView.setText(topicGenerator.generateTopic(1));
+
         sentence = textView.getText().toString();
         textView.setOnTouchListener(touchListener);
 
-        final TableRow arenaRow1 = (TableRow)rootView.findViewById(R.id.trappedRowArena1);
-        final TableRow arenaRow2 = (TableRow)rootView.findViewById(R.id.trappedRowArena2);
-
-        arenaRow1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Log.i("ArenaClick", "Clicked, yo");
-                arenaRow2.setVisibility(View.VISIBLE);
-            }
-        });
-
-        arenaRow2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                arenaRow2.setVisibility(View.GONE);
-            }
-        });
-
-/*
-        Button resetButton = (Button)rootView.findViewById(R.id.trappedButtonReset);
-        Button okButton = (Button)rootView.findViewById(R.id.trappedButtonOK);
-
-        //Reset Button
-        resetButton.setOnClickListener(
-                new View.OnClickListener(){
-                    public void onClick(View view){
-                        Switch switchButton;
-                        EditText editText;
-                        CheckBox checkBox;
-
-                        //Character 1
-                        topicTrapped.situation.setAll("", false, true);
-                        settingsReset(((Switch)rootView.findViewById(R.id.trappedSituationSwitch)),
-                                ((EditText)rootView.findViewById(R.id.trappedSituationEdit)),
-                                ((CheckBox)rootView.findViewById(R.id.trappedSituationChecked)));
-                    }
-                });
-
-        //OK Button
-        okButton.setOnClickListener(
-                new View.OnClickListener(){
-                    public void onClick(View view){
-                        Switch switchButton;
-                        EditText editText;
-                        CheckBox checkBox;
-
-                        //Set topic text
-                        editText = (EditText)rootView.findViewById(R.id.trappedSituationEdit);
-                        topicTrapped.situation.setName(editText.getText().toString());
-
-                        //Check switches//
-                        //Character 1 switch
-                        switchButton = (Switch)rootView.findViewById(R.id.trappedSituationSwitch);
-                        if (switchButton.isChecked()){
-                            topicTrapped.situation.setActive(true);
-                        }   else{
-                            topicTrapped.situation.setActive(false);
-                        }
-
-                        //Check checkboxes//
-                        //Topic checkbox
-                        checkBox = (CheckBox)rootView.findViewById(R.id.trappedSituationChecked);
-                        if (checkBox.isChecked()){
-                            topicTrapped.situation.setCustom(true);
-                        } else{
-                            topicTrapped.situation.setCustom(false);
-                        }
-
-                        ((MainActivity)getActivity()).setViewPagerSwipe(true);
-                        setHasOptionsMenu(true);
-                        Customise();
-                    }
-                }); */
         return rootView;
+    }
+
+    public void onBackPressed(ViewAnimator vA){
+        vA.showNext();
+        MainActivity.setSettingsActive();
     }
 
     private View.OnTouchListener touchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             int eventAction = event.getAction();
-            TextView textView = (TextView) v.findViewById(R.id.textViewTrapped);
+            TextView textView = (TextView) v.findViewById(R.id.textViewSentence);
 
             scaleGestureDetector.onTouchEvent(event);
 
             switch (eventAction){
                 case MotionEvent.ACTION_UP:
                     textView.setVisibility(TextView.VISIBLE);
-                    textView.setText(topicTrapped.generateTopic());
+                    if (customSubject.equals("")){
+                        textView.setText(topicGenerator.generateTopic(1));
+                    }
                     sentence = textView.getText().toString();
                     break;
                 case MotionEvent.ACTION_DOWN:
@@ -148,10 +94,31 @@ public class SectionTrapped extends Fragment {
         }
     };
 
-    private void settingsReset(Switch switchButton, EditText editText,CheckBox checkBox){
-        switchButton.setChecked(true);
-        checkBox.setChecked(false);
-        editText.setText("");
+    private void createRows(){
+
+        SettingsRow row;
+        row = new SettingsRow("You're trapped ", "in Arena", "", "arena", true, false);
+        rows.add(row);
+        row = new SettingsRow("which is ", "in Situation", "", "situation", true, true);
+        rows.add(row);
+        row = new SettingsRow("with ", "Companion", "", "companion", true, true);
+        rows.add(row);
+        row = new SettingsRow("You're equipped with ", "Equipment", "", "equipment1", true, true);
+        rows.add(row);
+        row = new SettingsRow("", "Equipment", "", "equipment2", true, true);
+        rows.add(row);
+        row = new SettingsRow("and ", "Equipment", "", "equipment3", true, true);
+        rows.add(row);
+        row = new SettingsRow("... What do you do?", "", "", "", false, false);
+        rows.add(row);
+
+        if (rows != null && rows.size() > 0){
+            adapter.notifyDataSetChanged();
+            for (int i = 0; i < rows.size(); i++){
+                adapter.add(rows.get(i));
+            }
+        }
+        adapter.notifyDataSetChanged();
     }
 
     public void share (){
@@ -173,15 +140,7 @@ public class SectionTrapped extends Fragment {
 
     @Override
     public void onCreateOptionsMenu( Menu menu, MenuInflater inflater) {
-           inflater.inflate(R.menu.section_describe_menu, menu);
-    }
-
-    private void Customise(){
-        if (viewSwitcher.getCurrentView() != getActivity().findViewById(R.layout.section_trapped)){
-            viewSwitcher.showNext();
-        } else {
-            viewSwitcher.showPrevious();
-        }
+        inflater.inflate(R.menu.section_menu, menu);
     }
 
     @Override
@@ -189,18 +148,14 @@ public class SectionTrapped extends Fragment {
         switch (item.getItemId()){
             case R.id.share:
                 share();
-                Log.i("Menu", "ClickedShare");
                 return true;
             case R.id.settings:
-                //setHasOptionsMenu(false);
-                ((MainActivity)getActivity()).setViewPagerSwipe(false);
-                Customise();
+                viewAnimator.showNext();
+                MainActivity.setViewAnimator(viewAnimator);
+                MainActivity.setSettingsActive();
                 return true;
             default:
-                Log.i("Menu", "Clicked");
                 return true;
         }
     }
-
-
 }

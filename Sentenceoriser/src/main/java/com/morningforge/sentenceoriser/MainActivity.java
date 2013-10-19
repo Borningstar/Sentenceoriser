@@ -29,6 +29,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     SectionsPagerAdapter mSectionsPagerAdapter;
 
     private SectionWins sectionWins = new SectionWins(MainActivity.this);
+    private SectionTrapped sectionTrapped = new SectionTrapped(MainActivity.this);
 
     static private boolean settingsActive;
     static private ViewAnimator viewAnimator;
@@ -115,7 +116,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 case 2:
                     sectionWins.onBackPressed(viewAnimator);
                 case 3:
-
+                    sectionTrapped.onBackPressed(viewAnimator);
                 case 4:
 
                 case 5:
@@ -178,9 +179,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 case 1:
                     return new SectionRand(c);
                 case 2:
-                    return new SectionWins(c);
+                    return sectionWins;
                 case 3:
-                    return new SectionTrapped(c);
+                    return sectionTrapped;
                 case 4:
                     return new SectionDescribe(c);
                 case 5:

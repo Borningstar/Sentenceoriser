@@ -23,8 +23,6 @@ public class TopicTrapped {
     private WordArray companionArray;
     Context context;
 
-    private int numEquip;
-
     public TopicTrapped(Context context){
         arenaArray = new WordArray(context, "TrappedArenas");
         equipmentArray = new WordArray(context, "TrappedEquipment");
@@ -73,58 +71,56 @@ public class TopicTrapped {
                 equipment3 = settings.getString("equipment3", "Equipment"),
                 equipment3Mode = settings.getString("equipment3Mode", "ON");
 
-        int EquipNum = 0;
-
-        String[] equipArray = new String[3];
+        int equipNum = 0;
 
         if (!arenaMode.equals("CUSTOM")){arena = arenaArray.getWord();}
         if (!situationMode.equals("CUSTOM")){situation = situationArray.getWord();}
         if (!companionMode.equals("CUSTOM")){companion = companionArray.getWord();}
         if (!equipment1Mode.equals("CUSTOM")){
             equipment1 = equipmentArray.getWord();
-            equipArray[EquipNum] = equipment1;
-            EquipNum++;
+            equipNum++;
         }
         if (!equipment2Mode.equals("CUSTOM")){
             equipment2 = equipmentArray.getWord();
-            equipArray[EquipNum] = equipment1;
-            EquipNum++;
+            equipNum++;
         }
         if (!equipment3Mode.equals("CUSTOM")){
             equipment3 = equipmentArray.getWord();
-            equipArray[EquipNum] = equipment1;
-            EquipNum++;
+            equipNum++;
         }
 
-        //Set arena
-        String sentence = ("You're trapped " +  arena);
-
-        //Set situation
-        if ((randomiser(1, 2) == 1) && (!situationMode.equals("OFF"))){
-            sentence += ", which is " + situation;
-        }
+        String sentence = ("You're trapped");
 
         //Companion
         if ((randomiser(1, 2) == 1) && (!companionMode.equals("OFF"))){
             sentence += " with " + companion;
         }
 
+        sentence += " " + arena;
+
+        //Set situation
+        if ((randomiser(1, 2) == 1) && (!situationMode.equals("OFF"))){
+            sentence += " which is " + situation;
+        }
+
+        String equipment = "";
+
         //Equipment 1
-        if ((randomiser(1, 2) == 1) && (!equipment1Mode.equals("OFF"))){
-            sentence += ".\r\n\n You're equipped with " + equipment1;
+        if ((!equipment1Mode.equals("OFF")) && ((equipNum >= 1))){
+            equipment = ".\r\n\n You're equipped with " + equipment1;
         }
 
         //Equipment 2
-        if ((randomiser(1, 2) == 1) && (!equipment2Mode.equals("OFF")) && (numEquip == 1)){
-            sentence += ", " + equipment2;
+        if ((randomiser(1, 2) == 1) && (!equipment2Mode.equals("OFF")) && (equipNum >= 2)){
+            equipment = ".\r\n\n You're equipped with " + equipment1 + " and " + equipment2;
         }
 
         //Equipment 3
-        if ((randomiser(1, 2) == 1) && (!equipment3Mode.equals("OFF")) && (numEquip == 2)){
-            sentence += " and " + equipment3;
+        if ((randomiser(1, 2) == 1) && (!equipment3Mode.equals("OFF")) && (equipNum == 3)){
+            equipment = ".\r\n\n You're equipped with " + equipment1 + ", " + equipment2 + " and " + equipment3;
         }
 
-        sentence += ". \r\n\n ... What do you do?";
+        sentence += equipment + ". \r\n\n ... What do you do?";
 
         return sentence;
     }
