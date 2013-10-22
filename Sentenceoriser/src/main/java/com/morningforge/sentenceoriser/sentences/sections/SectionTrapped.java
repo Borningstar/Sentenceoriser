@@ -97,11 +97,11 @@ public class SectionTrapped extends ListFragment {
     private void createRows(){
 
         SettingsRow row;
-        row = new SettingsRow("You're trapped ", "in Arena", "", "arena", true, false);
+        row = new SettingsRow("You're trapped with ", "Companion", "", "companion", true, true);
         rows.add(row);
-        row = new SettingsRow("which is ", "in Situation", "", "situation", true, true);
+        row = new SettingsRow("in ", "in Arena", "", "arena", true, false);
         rows.add(row);
-        row = new SettingsRow("with ", "Companion", "", "companion", true, true);
+        row = new SettingsRow("which is ", "in Situation", ".", "situation", true, true);
         rows.add(row);
         row = new SettingsRow("You're equipped with ", "Equipment", "", "equipment1", true, true);
         rows.add(row);

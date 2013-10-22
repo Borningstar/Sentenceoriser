@@ -47,9 +47,9 @@ public class TopicTrapped {
     private String whatDoYouDoGame (){
 
         /*
-        You're trapped ARENA
+        You're trapped with COMPANION
+        in ARENA
         which is SITUATION
-        with COMPANION
         You're equipped with EQUIPMENT1
         , EQUIPMENT2
         and EQUIPMENT3
@@ -72,20 +72,31 @@ public class TopicTrapped {
                 equipment3Mode = settings.getString("equipment3Mode", "ON");
 
         int equipNum = 0;
+        String[] selectedEquipArray = new String[3];
 
-        if (!arenaMode.equals("CUSTOM")){arena = arenaArray.getWord();}
-        if (!situationMode.equals("CUSTOM")){situation = situationArray.getWord();}
-        if (!companionMode.equals("CUSTOM")){companion = companionArray.getWord();}
-        if (!equipment1Mode.equals("CUSTOM")){
-            equipment1 = equipmentArray.getWord();
+        if (arenaMode.equals("ON")){arena = arenaArray.getWord();}
+        if (situationMode.equals("ON")){situation = situationArray.getWord();}
+        if (companionMode.equals("ON")){companion = companionArray.getWord();}
+
+        if (equipment1Mode.equals("ON")){
+            selectedEquipArray[equipNum] = equipmentArray.getWord();
+            equipNum++;
+        } else if (equipment1Mode.equals("CUSTOM")){
+            selectedEquipArray[equipNum] = equipment1;
             equipNum++;
         }
-        if (!equipment2Mode.equals("CUSTOM")){
-            equipment2 = equipmentArray.getWord();
+        if (equipment2Mode.equals("ON")){
+            selectedEquipArray[equipNum] = equipmentArray.getWord();
+            equipNum++;
+        } else if (equipment2Mode.equals("CUSTOM")){
+            selectedEquipArray[equipNum] = equipment2;
             equipNum++;
         }
-        if (!equipment3Mode.equals("CUSTOM")){
-            equipment3 = equipmentArray.getWord();
+        if (equipment3Mode.equals("ON")){
+            selectedEquipArray[equipNum] = equipmentArray.getWord();
+            equipNum++;
+        } else if (equipment3Mode.equals("CUSTOM")){
+            selectedEquipArray[equipNum] = equipment3;
             equipNum++;
         }
 
@@ -106,18 +117,18 @@ public class TopicTrapped {
         String equipment = "";
 
         //Equipment 1
-        if ((!equipment1Mode.equals("OFF")) && ((equipNum >= 1))){
-            equipment = ".\r\n\n You're equipped with " + equipment1;
+        if (equipNum >= 1){
+            equipment = ".\r\n\n You're equipped with " + selectedEquipArray[0];
         }
 
         //Equipment 2
-        if ((randomiser(1, 2) == 1) && (!equipment2Mode.equals("OFF")) && (equipNum >= 2)){
-            equipment = ".\r\n\n You're equipped with " + equipment1 + " and " + equipment2;
+        if ((randomiser(1, 2) == 1) && (equipNum >= 2)){
+            equipment = ".\r\n\n You're equipped with " + selectedEquipArray[0] + " and " + selectedEquipArray[1];
         }
 
         //Equipment 3
-        if ((randomiser(1, 2) == 1) && (!equipment3Mode.equals("OFF")) && (equipNum == 3)){
-            equipment = ".\r\n\n You're equipped with " + equipment1 + ", " + equipment2 + " and " + equipment3;
+        if ((randomiser(1, 2) == 1) && (equipNum == 3)){
+            equipment = ".\r\n\n You're equipped with " + selectedEquipArray[0] + ", " + selectedEquipArray[1] + " and " + selectedEquipArray[2];
         }
 
         sentence += equipment + ". \r\n\n ... What do you do?";
