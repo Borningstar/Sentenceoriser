@@ -6,32 +6,28 @@ package com.morningforge.sentenceoriser.sentences.sections;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v4.app.ListFragment;
 import android.view.*;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.ViewSwitcher;
+import android.widget.ViewAnimator;
+
 import com.morningforge.sentenceoriser.MainActivity;
 import com.morningforge.sentenceoriser.R;
-import com.morningforge.sentenceoriser.sentences.topics.TopicDescribe;
+import com.morningforge.sentenceoriser.sentences.topics.TopicGenerator;
+import com.morningforge.sentenceoriser.settingsView.SettingsAdapter;
+import com.morningforge.sentenceoriser.settingsView.SettingsRow;
 
-public class SectionDescribe extends Fragment {
-    private Context c;
+import java.util.ArrayList;
+
+public class SectionDescribe extends ListFragment {
+    Context c;
+    private String customSubject = "";
+    private ViewAnimator viewAnimator;
+    ScaleGestureDetector scaleGestureDetector;
+    private ArrayList<SettingsRow> rows = null;
+    private SettingsAdapter adapter;
+    private TopicGenerator topicGenerator;
     private String sentence;
-    private TopicDescribe topicGenerator;
-    private ScaleGestureDetector scaleGestureDetector;
-    private View rootView;
-
-
-    private ViewSwitcher viewSwitcher;
-
-    public SectionDescribe(){
-
-    }
     public SectionDescribe(Context c) {
         this.c = c;
     }
@@ -40,221 +36,88 @@ public class SectionDescribe extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        rootView = inflater.inflate(R.layout.section_describe, container, false);
-        viewSwitcher = (ViewSwitcher)rootView.findViewById(R.id.viewSwitcher1);
+        View settingsView = inflater.inflate(R.layout.settings_layout, container, false);
+        View sentenceView = inflater.inflate(R.layout.sentence_text, container, false);
+        View rootView = inflater.inflate(R.layout.sentence_layout, container, false);
 
-        topicGenerator = new TopicDescribe(this.c);
+        rows = new ArrayList<SettingsRow>();
+        adapter = new SettingsAdapter(c, R.layout.settings_row, rows);
+        setListAdapter(adapter);
 
+        createRows();
+
+        topicGenerator = new TopicGenerator(this.c);
         setHasOptionsMenu(true);
 
         scaleGestureDetector = new ScaleGestureDetector(c, new ScaleListener());
+        viewAnimator = (ViewAnimator)rootView.findViewById(R.id.viewAnimator);
+        viewAnimator.addView(sentenceView);
+        viewAnimator.addView(settingsView);
 
-        TextView textView = (TextView) rootView.findViewById(R.id.textViewDescribe);
-        textView.setText(topicGenerator.generateTopic());
+        TextView textView = (TextView) sentenceView.findViewById(R.id.textViewSentence);
+        textView.setText(topicGenerator.generateTopic(3));
+
         sentence = textView.getText().toString();
         textView.setOnTouchListener(touchListener);
 
-        Button resetButton = (Button)rootView.findViewById(R.id.describeButtonReset);
-        Button okButton = (Button)rootView.findViewById(R.id.describeButtonOK);
-
-        //Reset Button
-        resetButton.setOnClickListener(
-        new View.OnClickListener(){
-            public void onClick(View view){
-                Switch switchButton;
-                EditText editText;
-                CheckBox checkBox;
-
-                //Topic
-                topicGenerator.setTopicCustom(false);
-                topicGenerator.setTopic("");
-                checkBox = (CheckBox)rootView.findViewById(R.id.describeTopicChecked);
-                checkBox.setChecked(false);
-                editText = (EditText)rootView.findViewById(R.id.describeTopicEdit);
-                editText.setText("");
-                //Character 1
-                topicGenerator.setCharacter1Custom(false);
-                topicGenerator.setCharacter1("");
-                settingsReset(((Switch)rootView.findViewById(R.id.describeCharacter1Switch)),
-                        ((EditText)rootView.findViewById(R.id.describeCharacter1Edit)),
-                        ((CheckBox)rootView.findViewById(R.id.describeCharacter1Checked)));
-
-                //Character 2
-                topicGenerator.setCharacter2Custom(false);
-                topicGenerator.setCharacter2("");
-                settingsReset(((Switch)rootView.findViewById(R.id.describeCharacter2Switch)),
-                        ((EditText)rootView.findViewById(R.id.describeCharacter2Checked)),
-                        ((CheckBox)rootView.findViewById(R.id.describeCharacter2Edit)));
-                //Stat you
-                topicGenerator.setStatYouCustom(false);
-                topicGenerator.setStatYou("");
-                settingsReset(((Switch)rootView.findViewById(R.id.describeStatusYouSwitch)),
-                        ((EditText)rootView.findViewById(R.id.describeStatusYouBox)),
-                        ((CheckBox)rootView.findViewById(R.id.describeStatusYouEdit)));
-                //Stat me
-                topicGenerator.setStatMeCustom(false);
-                topicGenerator.setStatusMe("");
-                settingsReset(((Switch)rootView.findViewById(R.id.describeStatusMeSwitch)),
-                        ((EditText)rootView.findViewById(R.id.describeStatusMeBox)),
-                        ((CheckBox)rootView.findViewById(R.id.describeStatusMeEdit)));
-                //Stat us
-                topicGenerator.setStatUsCustom(false);
-                topicGenerator.setStatUs("");
-                settingsReset(((Switch)rootView.findViewById(R.id.describeStatusUsSwitch)),
-                        ((EditText)rootView.findViewById(R.id.describeStatusUsBox)),
-                        ((CheckBox)rootView.findViewById(R.id.describeStatusUsEdit)));
-            }
-        });
-
-        //OK Button
-        okButton.setOnClickListener(
-        new View.OnClickListener(){
-            public void onClick(View view){
-                Switch switchButton;
-                EditText editText;
-                CheckBox checkBox;
-
-                //Set topic text
-                editText = (EditText)rootView.findViewById(R.id.describeTopicEdit);
-                topicGenerator.setTopic(editText.getText().toString());
-                //Set character 1 text
-                editText = (EditText)rootView.findViewById(R.id.describeCharacter1Edit);
-                topicGenerator.setCharacter1(editText.getText().toString());
-                //Set character 2 text
-                editText = (EditText)rootView.findViewById(R.id.describeCharacter2Edit);
-                topicGenerator.setCharacter2(editText.getText().toString());
-                //Set stat you text
-                editText = (EditText)rootView.findViewById(R.id.describeStatusYouEdit);
-                topicGenerator.setStatYou(editText.getText().toString());
-                //Set stat me text
-                editText = (EditText)rootView.findViewById(R.id.describeStatusMeEdit);
-                topicGenerator.setStatusMe(editText.getText().toString());
-                //Set stat us text
-                editText = (EditText)rootView.findViewById(R.id.describeStatusUsEdit);
-                topicGenerator.setStatUs(editText.getText().toString());
-
-                //Check switches//
-                //Character 1 switch
-                switchButton = (Switch)rootView.findViewById(R.id.describeCharacter1Switch);
-                if (switchButton.isChecked()){
-                    topicGenerator.setCharacter1Active(true);
-                }   else{
-                    topicGenerator.setCharacter1Active(false);
-                }
-                //Character 2 switch
-                switchButton = (Switch)rootView.findViewById(R.id.describeCharacter2Switch);
-                if (switchButton.isChecked()){
-                    topicGenerator.setCharacter2Active(true);
-                }   else{
-                    topicGenerator.setCharacter2Active(false);
-                }
-                //Status me switch
-                switchButton = (Switch)rootView.findViewById(R.id.describeStatusMeSwitch);
-                if (switchButton.isChecked()){
-                    topicGenerator.setStatMeActive(true);
-                }   else{
-                    topicGenerator.setStatMeActive(false);
-                }
-                //Status us switch
-                switchButton = (Switch)rootView.findViewById(R.id.describeStatusUsSwitch);
-                if (switchButton.isChecked()){
-                    topicGenerator.setStatUsActive(true);
-                }   else{
-                    topicGenerator.setStatUsActive(false);
-                }
-                //Status you switch
-                switchButton = (Switch)rootView.findViewById(R.id.describeStatusYouSwitch);
-                if (switchButton.isChecked()){
-                    topicGenerator.setStatYouActive(true);
-                }   else{
-                    topicGenerator.setStatYouActive(false);
-                }
-
-                //Check checkboxes//
-                //Topic checkbox
-                checkBox = (CheckBox)rootView.findViewById(R.id.describeTopicChecked);
-                if (checkBox.isChecked()){
-                    topicGenerator.setTopicCustom(true);
-                } else{
-                    topicGenerator.setTopicCustom(false);
-                }
-                //Character 1 checkbox
-                checkBox = (CheckBox)rootView.findViewById(R.id.describeCharacter1Checked);
-                if (checkBox.isChecked()){
-                    topicGenerator.setCharacter1Custom(true);
-                } else{
-                    topicGenerator.setCharacter1Custom(false);
-                }
-                //Character 2 checkbox
-                checkBox = (CheckBox)rootView.findViewById(R.id.describeCharacter2Checked);
-                if (checkBox.isChecked()){
-                    topicGenerator.setCharacter2Custom(true);
-                } else{
-                    topicGenerator.setCharacter2Custom(false);
-                }
-                //Status Me checkbox
-                checkBox = (CheckBox)rootView.findViewById(R.id.describeStatusMeBox);
-                if (checkBox.isChecked()){
-                    topicGenerator.setStatMeCustom(true);
-                } else{
-                    topicGenerator.setStatMeCustom(false);
-                }
-                //Status You checkbox
-                checkBox = (CheckBox)rootView.findViewById(R.id.describeStatusYouBox);
-                if (checkBox.isChecked()){
-                    topicGenerator.setStatYouCustom(true);
-                } else{
-                    topicGenerator.setStatYouCustom(false);
-                }
-                //Status Us checkbox
-                checkBox = (CheckBox)rootView.findViewById(R.id.describeStatusUsBox);
-                if (checkBox.isChecked()){
-                    topicGenerator.setStatUsCustom(true);
-                } else{
-                    topicGenerator.setStatUsCustom(false);
-                }
-
-                ((MainActivity)getActivity()).setViewPagerSwipe(true);
-                setHasOptionsMenu(true);
-                Customise();
-            }
-        });
         return rootView;
     }
 
-    private void settingsReset(Switch switchButton, EditText editText,CheckBox checkBox){
-        switchButton.setChecked(true);
-        checkBox.setChecked(false);
-        editText.setText("");
+    public void onBackPressed(ViewAnimator vA){
+        vA.showNext();
+        MainActivity.setSettingsActive();
     }
 
     private View.OnTouchListener touchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             int eventAction = event.getAction();
-            TextView textView = (TextView) v.findViewById(R.id.textViewDescribe);
-
-            setHasOptionsMenu(true);
+            TextView textView = (TextView) v.findViewById(R.id.textViewSentence);
 
             scaleGestureDetector.onTouchEvent(event);
 
-            if (scaleGestureDetector.isInProgress() == false){
-                switch (eventAction){
-                    case MotionEvent.ACTION_UP:
-                        textView.setText(topicGenerator.generateTopic());
-                        sentence = textView.getText().toString();
-                        textView.setVisibility(TextView.VISIBLE);
-                        break;
-                    case MotionEvent.ACTION_DOWN:
-                        textView.setVisibility(TextView.INVISIBLE);
-                        break;
-                    default:
-                        textView.setVisibility(TextView.VISIBLE);
-                }
+            switch (eventAction){
+                case MotionEvent.ACTION_UP:
+                    textView.setVisibility(TextView.VISIBLE);
+                    if (customSubject.equals("")){
+                        textView.setText(topicGenerator.generateTopic(3));
+                    }
+                    sentence = textView.getText().toString();
+                    break;
+                case MotionEvent.ACTION_DOWN:
+                    textView.setVisibility(TextView.INVISIBLE);
+                    break;
+                default:
+                    textView.setVisibility(TextView.VISIBLE);
             }
             return true;  //To change body of implemented methods use File | Settings | File Templates.
         }
     };
+
+    private void createRows(){
+
+        SettingsRow row;
+        row = new SettingsRow("Explain to me ", "Topic", "", "topic", true, false);
+        rows.add(row);
+        row = new SettingsRow("like you're ", "Character", "", "character2", true, false);
+        rows.add(row);
+        row = new SettingsRow("and you", "'re in Situation", ",", "statYou", true, true);
+        rows.add(row);
+        row = new SettingsRow("and I'm ", "Character", "", "character1", true, true);
+        rows.add(row);
+        row = new SettingsRow("", "and I'm in Situation", "", "statMe", true, true);
+        rows.add(row);
+        row = new SettingsRow("and we're ", "in Situation", ".", "statUs", true, true);
+        rows.add(row);
+
+        if (rows != null && rows.size() > 0){
+            adapter.notifyDataSetChanged();
+            for (int i = 0; i < rows.size(); i++){
+                adapter.add(rows.get(i));
+            }
+        }
+        adapter.notifyDataSetChanged();
+    }
 
     public void share (){
 
@@ -273,17 +136,9 @@ public class SectionDescribe extends Fragment {
         }
     }
 
-    private void Customise(){
-        if (viewSwitcher.getCurrentView() != getActivity().findViewById(R.layout.section_describe)){
-            viewSwitcher.showNext();
-        } else {
-            viewSwitcher.showPrevious();
-        }
-    }
-
     @Override
     public void onCreateOptionsMenu( Menu menu, MenuInflater inflater) {
-           inflater.inflate(R.menu.section_describe_menu, menu);
+        inflater.inflate(R.menu.section_menu, menu);
     }
 
     @Override
@@ -291,15 +146,13 @@ public class SectionDescribe extends Fragment {
         switch (item.getItemId()){
             case R.id.share:
                 share();
-                Log.i("Menu", "ClickedShare");
                 return true;
             case R.id.settings:
-                setHasOptionsMenu(false);
-                ((MainActivity)getActivity()).setViewPagerSwipe(false);
-                Customise();
+                viewAnimator.showNext();
+                MainActivity.setViewAnimator(viewAnimator);
+                MainActivity.setSettingsActive();
                 return true;
             default:
-                Log.i("Menu", "Clicked");
                 return true;
         }
     }

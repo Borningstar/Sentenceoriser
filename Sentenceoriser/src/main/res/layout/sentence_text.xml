@@ -11,8 +11,8 @@
             android:id="@+id/textViewSentence"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:textSize="20dp" android:layout_weight="1" android:layout_gravity="center"
+            android:textSize="@dimen/settings_text_size" android:layout_weight="1" android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="#2DC800"/>
+            android:textColor="@color/options_toggle"/>
 
 </LinearLayout>

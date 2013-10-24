@@ -1,6 +1,9 @@
 package com.morningforge.sentenceoriser.sentences.topics;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import com.morningforge.sentenceoriser.sentences.WordArray;
 
 import java.util.Random;
@@ -15,40 +18,23 @@ import java.util.Random;
 public class TopicDescribe {
 
     //WordArrays to store words
-    private WordArray characters;
-    private WordArray topics;
-    private WordArray statusYou;
-    private WordArray statusMe;
-    private WordArray statusUs;
+    private WordArray characterArray;
+    private WordArray topicArray;
+    private WordArray statusYouArray;
+    private WordArray statusMeArray;
+    private WordArray statusUsArray;
+    private Context context;
 
-    private String topic = "";
-    private String character1 = "";
-    private String character2 = "";
-    private String statYou = "";
-    private String statMe = "";
-    private String statUs = "";
-
-    private boolean character1Active = true;
-    private boolean character2Active = true;
-    private boolean statYouActive = true;
-    private boolean statMeActive = true;
-    private boolean statUsActive = true;
-
-    private boolean character1Custom = false,
-            character2Custom = false,
-            topicCustom = false,
-            statYouCustom = false,
-            statMeCustom = false,
-            statUsCustom = false;
 
 
     //Initiatise the WordArrays using specific files
     public TopicDescribe(Context context){
-        characters = new WordArray(context, "DescribeCharacters");
-        topics = new WordArray(context, "DescribeTopics");
-        statusYou = new WordArray(context, "DescribeStatusYou");
-        statusMe = new WordArray (context, "DescribeStatusMe");
-        statusUs = new WordArray (context, "DescribeStatusUs");
+        characterArray = new WordArray(context, "DescribeCharacters");
+        topicArray = new WordArray(context, "DescribeTopics");
+        statusYouArray = new WordArray(context, "DescribeStatusYou");
+        statusMeArray = new WordArray (context, "DescribeStatusMe");
+        statusUsArray = new WordArray (context, "DescribeStatusUs");
+        this.context = context;
     }
 
     //Generates a random number between min and max
@@ -62,61 +48,66 @@ public class TopicDescribe {
     //Generate the topic
     public String generateTopic(){
 
-        if (topicCustom == false){ topic = topics.getWord();}
-        if (!character1Custom){character1 = characters.getWord();}
-        if (!character2Custom){character2 = characters.getWord();}
-        if (!statYouCustom){statYou = statusYou.getWord();}
-        if (!statMeCustom){statMe = statusMe.getWord();}
-        if (!statUsCustom){statUs = statusUs.getWord();}
-
         return describeToMeSentence();
     }
 
-    public void setTopic(String customTopic){topic = customTopic;}
-    public void setCharacter1(String customTopic){character1 = customTopic;}
-    public void setCharacter2(String customTopic){character2 = customTopic;}
-    public void setStatYou(String customTopic){statYou = customTopic;}
-    public void setStatusMe(String customTopic){statMe = customTopic;}
-    public void setStatUs(String customTopic){statUs = customTopic;}
-
-    public void setCharacter1Active (boolean active){character1Active = active;}
-    public void setCharacter2Active (boolean active){character2Active = active;}
-    public void setStatYouActive (boolean active){statYouActive = active;}
-    public void setStatMeActive (boolean active){statMeActive = active;}
-    public void setStatUsActive (boolean active){statUsActive = active;}
-
-    public void setCharacter1Custom (boolean enabled){character1Custom = enabled;}
-    public void setCharacter2Custom (boolean enabled){character2Custom = enabled;}
-    public void setStatYouCustom (boolean enabled){statYouCustom = enabled;}
-    public void setStatMeCustom (boolean enabled){statMeCustom = enabled;}
-    public void setStatUsCustom (boolean enabled){statUsCustom = enabled;}
-    public void setTopicCustom (boolean enabled){topicCustom = enabled;}
-
     private String describeToMeSentence(){
+
+
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+
+        String topic = settings.getString("topic", "Topic"),
+                topicMode = settings.getString("topicMode", "ON"),
+                character1 = settings.getString("character1", "Character 1"),
+                character1Mode = settings.getString("character1Mode", "ON"),
+                character2 = settings.getString("character2", "Character 2"),
+                character2Mode = settings.getString("character2Mode", "ON"),
+                statYou = settings.getString("statYou", "Stat You"),
+                statYouMode = settings.getString("statYouMode", "ON"),
+                statMe = settings.getString("statMeMode", "Stat Me"),
+                statMeMode = settings.getString("statMeMode", "ON"),
+                statUs = settings.getString("statUs", "Stat Us"),
+                statUsMode = settings.getString("statUsMode", "ON");
+
+        if (topicMode.equals("ON")){topic = topicArray.getWord();}
+        if (character1Mode.equals("ON")){character1 = characterArray.getWord();}
+        if (character2Mode.equals("ON")){character2 = characterArray.getWord();}
+        if (statYouMode.equals("ON")){statYou = statusYouArray.getWord();}
+        if (statMeMode.equals("ON")){statMe = statusMeArray.getWord();}
+        if (statUsMode.equals("ON")){statUs = statusUsArray.getWord();}
+
+        /*
+        Explain to me TOPIC
+        like you're CHARACTER
+        and you STATUS
+        and I'm CHARACTER
+        and I'm STATUS
+        and we're STATUS.
+        */
 
         //Only use one modifier
         boolean mod = true;
 
         String sentence = "Explain to me " + topic;           //Topic
 
-        if (character2Active){
+        if (!character2Mode.equals("OFF")){
             sentence = sentence + " like you're " + character2;    //Your character
         }
 
-        if (randomiser(1, 2) == 1 && statYouActive){
+        if (randomiser(1, 2) == 1 && (!statYouMode.equals("OFF"))){
             mod = false;
             sentence = sentence + " and you" + statYou;     //Your status
         }
 
-        if ((randomiser(1, 2) == 1 || character1Custom) && character1Active){
+        if ((randomiser(1, 2) == 1 && (!character1Mode.equals("OFF")))){
             sentence = sentence + ", and I'm " + character1;  //My character
-            if (randomiser(1, 2) == 1 && mod || statMeActive){
+            if (randomiser(1, 2) == 1 && mod && (!statMeMode.equals("OFF"))){
                 mod = false;
                 sentence = sentence + " " + statMe;         //My status
             }
         }
 
-        if (randomiser(1, 5) >= 3 && mod && statUsActive){
+        if (randomiser(1, 5) >= 3 && mod && (!statUsMode.equals("OFF"))){
             sentence = sentence + ", and we're " + statUs;  //Our status
         }
         sentence = sentence + ".";
