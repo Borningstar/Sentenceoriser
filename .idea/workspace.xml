@@ -73,10 +73,6 @@
     <list default="true" id="99489e97-132b-4ad1-b37c-24e4a3a5951f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/FragmentPagerAdapter.java" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/FragmentPagerAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/PagerAdapter.java" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/PagerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/VerticalViewPager.java" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/VerticalViewPager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Sentenceoriser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -209,16 +205,16 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="0" selection-start="4159" selection-end="4159" vertical-scroll-proportion="3.6889694" vertical-offset="0" max-vertical-offset="4097">
+            <state line="194" column="38" selection-start="6691" selection-end="6691" vertical-scroll-proportion="5.963834" vertical-offset="0" max-vertical-offset="4080">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3361#3642#0" expanded="true" />
-                <element signature="e#3631#3632#0" expanded="true" />
-                <element signature="e#4522#4705#0" expanded="true" />
-                <element signature="e#4694#4695#0" expanded="true" />
-                <element signature="e#7543#7577#0" expanded="true" />
-                <element signature="e#7645#7679#0" expanded="true" />
-                <element signature="e#7747#7781#0" expanded="true" />
+                <element signature="e#3309#3590#0" expanded="true" />
+                <element signature="e#3579#3580#0" expanded="true" />
+                <element signature="e#4470#4653#0" expanded="true" />
+                <element signature="e#4642#4643#0" expanded="true" />
+                <element signature="e#7491#7525#0" expanded="true" />
+                <element signature="e#7593#7627#0" expanded="true" />
+                <element signature="e#7695#7729#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -239,7 +235,7 @@
       <file leaf-file-name="FragmentPagerAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/FragmentPagerAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="17" selection-start="2818" selection-end="2818" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2890">
+            <state line="69" column="48" selection-start="2893" selection-end="2893" vertical-scroll-proportion="0.0" vertical-offset="708" max-vertical-offset="2890">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -355,11 +351,11 @@
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/sentence_text.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/drawer_list_view_item.xml" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/PagerAdapter.java" />
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/PagerAdapter.java" />
-        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/FragmentPagerAdapter.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/VerticalViewPager.java" />
         <option value="$PROJECT_DIR$/Sentenceoriser/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java" />
+        <option value="$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/FragmentPagerAdapter.java" />
       </list>
     </option>
   </component>
@@ -1176,15 +1172,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/FragmentPagerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="17" selection-start="2818" selection-end="2818" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2890">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/VerticalViewPager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2469" column="5" selection-start="95804" selection-end="95804" vertical-scroll-proportion="-6.8461537" vertical-offset="41795" max-vertical-offset="48008">
@@ -1212,18 +1199,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/FragmentPagerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="0" selection-start="4159" selection-end="4159" vertical-scroll-proportion="3.6889694" vertical-offset="0" max-vertical-offset="4097">
+        <state line="69" column="48" selection-start="2893" selection-end="2893" vertical-scroll-proportion="0.0" vertical-offset="708" max-vertical-offset="2890">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3361#3642#0" expanded="true" />
-            <element signature="e#3631#3632#0" expanded="true" />
-            <element signature="e#4522#4705#0" expanded="true" />
-            <element signature="e#4694#4695#0" expanded="true" />
-            <element signature="e#7543#7577#0" expanded="true" />
-            <element signature="e#7645#7679#0" expanded="true" />
-            <element signature="e#7747#7781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sentenceoriser/src/main/java/com/morningforge/sentenceoriser/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="38" selection-start="6691" selection-end="6691" vertical-scroll-proportion="5.963834" vertical-offset="0" max-vertical-offset="4080">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3309#3590#0" expanded="true" />
+            <element signature="e#3579#3580#0" expanded="true" />
+            <element signature="e#4470#4653#0" expanded="true" />
+            <element signature="e#4642#4643#0" expanded="true" />
+            <element signature="e#7491#7525#0" expanded="true" />
+            <element signature="e#7593#7627#0" expanded="true" />
+            <element signature="e#7695#7729#0" expanded="true" />
           </folding>
         </state>
       </provider>
