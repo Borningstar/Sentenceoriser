@@ -40,7 +40,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     static private boolean settingsActive;
     static private ViewAnimator viewAnimator;
 
-    CustomViewPager mViewPager;
+    VerticalViewPager mViewPager;
 
     private ArrayList<Integer> history = new ArrayList();
 
@@ -113,7 +113,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (CustomViewPager) findViewById(R.id.pager);
+        mViewPager = (VerticalViewPager) findViewById(R.id.pager);
       //  mViewPager.setPivotX(0);
       //  mViewPager.setPivotY(0);
       //  mViewPager.setRotation(90f);
@@ -126,7 +126,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         // When swiping between different sections, select the corresponding
         // tab. We can also use ActionBar.Tab#select() to do this if we have
         // a reference to the Tab.
-        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+        mViewPager.setOnPageChangeListener(new VerticalViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
                 addHistory(position);
@@ -168,7 +168,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     }
 
     public void setViewPagerSwipe(boolean enabled){
-        mViewPager.setPagingEnabled(enabled);
+     //   mViewPager.setPagingEnabled(enabled);
     }
 
     @Override

@@ -6,7 +6,7 @@ import android.view.View;
 /**
  * Created by Ben on 14/06/13.
  */
-public class DepthPageTransformer implements ViewPager.PageTransformer {
+public class DepthPageTransformer implements VerticalViewPager.PageTransformer {
 
     public void transformPage(View view, float position) {
         int pageWidth = view.getWidth();
