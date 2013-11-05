@@ -7,8 +7,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ViewAnimator;
 
 import com.morningforge.sentenceoriser.sentences.sections.*;
@@ -83,6 +89,24 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         addHistory(0);
 
+        String[] drawerItems = new String[3];
+        drawerItems[0] = "Wins";
+        drawerItems[1] = "Trapped";
+        drawerItems[2] = "Explain";
+
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer);
+        final LinearLayout drawerLayout = (LinearLayout) findViewById(R.id.drawerLayout);
+        final ListView drawerList = (ListView) findViewById(R.id.drawerListView);
+
+        drawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_view_item, drawerItems));
+        drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                setCurrentPagerItem(position);
+                drawer.closeDrawer(drawerLayout);
+            }
+        });
+
       //  actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         // Create the adapter that will return a fragment for each of the three
@@ -91,9 +115,13 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (CustomViewPager) findViewById(R.id.pager);
+      //  mViewPager.setPivotX(0);
+      //  mViewPager.setPivotY(0);
+       // mViewPager.setRotation(90f);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         mViewPager.setPageTransformer(true, new DepthPageTransformer());
+
 
         // When swiping between different sections, select the corresponding
         // tab. We can also use ActionBar.Tab#select() to do this if we have
@@ -111,16 +139,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         if (settingsActive){
             switch (getLastestHistory()){
                 case 0:
-
-                case 1:
-
-                case 2:
                     sectionWins.onBackPressed(viewAnimator);
-                case 3:
+                case 1:
                     sectionTrapped.onBackPressed(viewAnimator);
-                case 4:
+                case 2:
                     sectionDescribe.onBackPressed(viewAnimator);
-                case 5:
             }
         } else {
             if (getHistorySize() <= 1) {
@@ -139,6 +162,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     public void setCurrentPagerItem(int item) {
         mViewPager.setCurrentItem(item, false);
+        sectionWins.setVisible();
+        sectionDescribe.setVisible();
+        sectionTrapped.setVisible();
     }
 
     public void setViewPagerSwipe(boolean enabled){
@@ -176,25 +202,20 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    return new SectionGrid(c);
-                case 1:
-                    return new SectionRand(c);
-                case 2:
                     return sectionWins;
-                case 3:
+                case 1:
                     return sectionTrapped;
-                case 4:
+                case 2:
                     return sectionDescribe;
-                case 5:
-                    return new SectionSettingsTest(c);
-                default: return new SectionGrid(c);
+                default:
+                    return sectionWins;
             }
         }
 
         @Override
         public int getCount() {
             // Show 6 total pages.
-            return 6;
+            return 3;
         }
 
         @Override
@@ -207,10 +228,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                     return getString(R.string.title_section2).toUpperCase(l);
                 case 2:
                     return getString(R.string.title_section3).toUpperCase(l);
-                case 3:
-                    return getString(R.string.title_section4).toUpperCase(l);
-                case 4:
-                    return getString(R.string.title_section5).toUpperCase(l);
             }
             return null;
         }

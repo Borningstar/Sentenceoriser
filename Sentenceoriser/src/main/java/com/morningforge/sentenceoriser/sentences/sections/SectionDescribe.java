@@ -28,6 +28,7 @@ public class SectionDescribe extends ListFragment {
     private SettingsAdapter adapter;
     private TopicGenerator topicGenerator;
     private String sentence;
+    TextView textView;
     public SectionDescribe(Context c) {
         this.c = c;
     }
@@ -54,13 +55,18 @@ public class SectionDescribe extends ListFragment {
         viewAnimator.addView(sentenceView);
         viewAnimator.addView(settingsView);
 
-        TextView textView = (TextView) sentenceView.findViewById(R.id.textViewSentence);
+        textView = (TextView) sentenceView.findViewById(R.id.textViewSentence);
         textView.setText(topicGenerator.generateTopic(3));
 
         sentence = textView.getText().toString();
         textView.setOnTouchListener(touchListener);
 
         return rootView;
+    }
+
+
+    public void setVisible(){
+        textView.setVisibility(TextView.VISIBLE);
     }
 
     public void onBackPressed(ViewAnimator vA){
@@ -72,7 +78,7 @@ public class SectionDescribe extends ListFragment {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             int eventAction = event.getAction();
-            TextView textView = (TextView) v.findViewById(R.id.textViewSentence);
+            textView = (TextView) v.findViewById(R.id.textViewSentence);
 
             scaleGestureDetector.onTouchEvent(event);
 
@@ -87,7 +93,7 @@ public class SectionDescribe extends ListFragment {
                 case MotionEvent.ACTION_DOWN:
                     textView.setVisibility(TextView.INVISIBLE);
                     break;
-                default:
+                case MotionEvent.ACTION_CANCEL:
                     textView.setVisibility(TextView.VISIBLE);
             }
             return true;  //To change body of implemented methods use File | Settings | File Templates.

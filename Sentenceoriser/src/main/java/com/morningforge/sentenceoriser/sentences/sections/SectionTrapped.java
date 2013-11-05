@@ -28,6 +28,7 @@ public class SectionTrapped extends ListFragment {
     private SettingsAdapter adapter;
     private TopicGenerator topicGenerator;
     private String sentence;
+    TextView textView;
     public SectionTrapped(Context c) {
         this.c = c;
     }
@@ -54,7 +55,7 @@ public class SectionTrapped extends ListFragment {
         viewAnimator.addView(sentenceView);
         viewAnimator.addView(settingsView);
 
-        TextView textView = (TextView) sentenceView.findViewById(R.id.textViewSentence);
+        textView = (TextView) sentenceView.findViewById(R.id.textViewSentence);
         textView.setText(topicGenerator.generateTopic(1));
 
         sentence = textView.getText().toString();
@@ -68,11 +69,15 @@ public class SectionTrapped extends ListFragment {
         MainActivity.setSettingsActive();
     }
 
+    public void setVisible(){
+        super.onResume();
+        textView.setVisibility(TextView.VISIBLE);
+    }
+
     private View.OnTouchListener touchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             int eventAction = event.getAction();
-            TextView textView = (TextView) v.findViewById(R.id.textViewSentence);
 
             scaleGestureDetector.onTouchEvent(event);
 
@@ -87,7 +92,7 @@ public class SectionTrapped extends ListFragment {
                 case MotionEvent.ACTION_DOWN:
                     textView.setVisibility(TextView.INVISIBLE);
                     break;
-                default:
+                case MotionEvent.ACTION_CANCEL:
                     textView.setVisibility(TextView.VISIBLE);
             }
             return true;  //To change body of implemented methods use File | Settings | File Templates.

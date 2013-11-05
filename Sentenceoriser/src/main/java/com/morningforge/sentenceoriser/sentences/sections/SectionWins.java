@@ -28,6 +28,7 @@ public class SectionWins extends ListFragment {
     private SettingsAdapter adapter;
     private TopicGenerator topicGenerator;
     private String sentence;
+    TextView textView;
     public SectionWins(Context c) {
         this.c = c;
     }
@@ -54,13 +55,18 @@ public class SectionWins extends ListFragment {
         viewAnimator.addView(sentenceView);
         viewAnimator.addView(settingsView);
 
-        TextView textView = (TextView) sentenceView.findViewById(R.id.textViewSentence);
+        textView = (TextView) sentenceView.findViewById(R.id.textViewSentence);
         textView.setText(topicGenerator.generateTopic(2));
 
         sentence = textView.getText().toString();
         textView.setOnTouchListener(touchListener);
 
         return rootView;
+    }
+
+    public void setVisible(){
+        super.onResume();
+        textView.setVisibility(TextView.VISIBLE);
     }
 
     public void onBackPressed(ViewAnimator vA){
@@ -72,7 +78,6 @@ public class SectionWins extends ListFragment {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             int eventAction = event.getAction();
-            TextView textView = (TextView) v.findViewById(R.id.textViewSentence);
 
             scaleGestureDetector.onTouchEvent(event);
 
@@ -87,7 +92,7 @@ public class SectionWins extends ListFragment {
                 case MotionEvent.ACTION_DOWN:
                     textView.setVisibility(TextView.INVISIBLE);
                     break;
-                default:
+                case MotionEvent.ACTION_CANCEL:
                     textView.setVisibility(TextView.VISIBLE);
             }
             return true;  //To change body of implemented methods use File | Settings | File Templates.
@@ -143,6 +148,12 @@ public class SectionWins extends ListFragment {
         inflater.inflate(R.menu.section_menu, menu);
     }
 
+    public void settingsToggle(){
+        viewAnimator.showNext();
+        MainActivity.setViewAnimator(viewAnimator);
+        MainActivity.setSettingsActive();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
@@ -150,9 +161,7 @@ public class SectionWins extends ListFragment {
                 share();
                 return true;
             case R.id.settings:
-                viewAnimator.showNext();
-                MainActivity.setViewAnimator(viewAnimator);
-                MainActivity.setSettingsActive();
+                settingsToggle();
                 return true;
             default:
                 return true;

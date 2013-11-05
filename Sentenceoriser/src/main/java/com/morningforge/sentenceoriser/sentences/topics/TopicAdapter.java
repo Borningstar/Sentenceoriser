@@ -44,7 +44,7 @@ public class TopicAdapter extends BaseAdapter {
         TextView textView;
         if (convertView == null) {  // if it's not recycled, initialize some attributes
             textView = new TextView(mContext);
-            textView.setLayoutParams(new GridView.LayoutParams(100, 100));
+            textView.setLayoutParams(new GridView.LayoutParams(200, 200));
             textView.setGravity(Gravity.CENTER);
             textView.setTypeface(null, Typeface.BOLD);
             textView.setPadding(8, 8, 8, 8);
