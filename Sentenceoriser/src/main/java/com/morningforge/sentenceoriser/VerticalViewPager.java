@@ -47,7 +47,6 @@ import android.support.v4.os.ParcelableCompatCreatorCallbacks;
 import android.support.v4.view.AccessibilityDelegateCompat;
 import android.support.v4.view.KeyEventCompat;
 import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.VelocityTrackerCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewConfigurationCompat;
@@ -73,7 +72,7 @@ import android.widget.Scroller;
 /**
  * Layout manager that allows the user to flip left and right
  * through pages of data.  You supply an implementation of a
- * {@link android.support.v4.view.PagerAdapter} to generate the pages that the view shows.
+ * {@link PagerAdapter} to generate the pages that the view shows.
  *
  * <p>Note this class is currently under early design and
  * development.  The API will likely change in later updates of
@@ -86,7 +85,7 @@ import android.widget.Scroller;
  * which cover the most common use cases.  These are
  * {@link android.support.v4.app.FragmentPagerAdapter},
  * {@link android.support.v4.app.FragmentStatePagerAdapter},
- * {@link android.support.v4.app.FragmentPagerAdapter}, and
+ * {@link FragmentPagerAdapter}, and
  * {@link android.support.v4.app.FragmentStatePagerAdapter}; each of these
  * classes have simple code showing how to build a full user interface
  * with them.
@@ -412,7 +411,7 @@ public class VerticalViewPager extends ViewGroup {
     }
 
     /**
-     * Set a com.morningforge.sentenceoriser.PagerAdapter that will supply views for this pager as needed.
+     * Set a PagerAdapter that will supply views for this pager as needed.
      *
      * @param adapter Adapter to use
      */
@@ -471,7 +470,7 @@ public class VerticalViewPager extends ViewGroup {
     /**
      * Retrieve the current adapter supplying pages.
      *
-     * @return The currently registered com.morningforge.sentenceoriser.PagerAdapter
+     * @return The currently registered PagerAdapter
      */
     public PagerAdapter getAdapter() {
         return mAdapter;
@@ -2295,7 +2294,7 @@ public class VerticalViewPager extends ViewGroup {
     /**
      * Fake drag by an offset in pixels. You must have called {@link #beginFakeDrag()} first.
      *
-     * @param xOffset Offset in pixels to drag by.
+     * @param yOffset Offset in pixels to drag by.
      * @see #beginFakeDrag()
      * @see #endFakeDrag()
      */
@@ -2427,11 +2426,7 @@ public class VerticalViewPager extends ViewGroup {
         }
 
         // to vertical scroll inner WebViews for Froyo+
-        if (v instanceof ExtendedWebView) {
-            return ((ExtendedWebView) v).canScrollVertical(-dy);
-        } else {
-            return checkV && ViewCompat.canScrollVertically(v, -dy);
-        }
+        return checkV && ViewCompat.canScrollVertically(v, -dy);
     }
 
     @Override

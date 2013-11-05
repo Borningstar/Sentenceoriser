@@ -1,4 +1,4 @@
-package com.morningforge.sentenceoriser;/*
+/*
  * Copyright (C) 2011 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +14,7 @@ package com.morningforge.sentenceoriser;/*
  * limitations under the License.
  */
 
+package com.morningforge.sentenceoriser;
 
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;
@@ -23,12 +24,12 @@ import android.view.ViewGroup;
 
 /**
  * Base class providing the adapter to populate pages inside of
- * a {@link com.morningforge.sentenceoriser.VerticalViewPager}.  You will most likely want to use a more
+ * a {@link VerticalViewPager}.  You will most likely want to use a more
  * specific implementation of this, such as
  * {@link android.support.v4.app.FragmentPagerAdapter} or
  * {@link android.support.v4.app.FragmentStatePagerAdapter}.
  *
- * <p>When you implement a com.morningforge.sentenceoriser.PagerAdapter, you must override the following methods
+ * <p>When you implement a PagerAdapter, you must override the following methods
  * at minimum:</p>
  * <ul>
  * <li>{@link #instantiateItem(ViewGroup, int)}</li>
@@ -37,17 +38,17 @@ import android.view.ViewGroup;
  * <li>{@link #isViewFromObject(View, Object)}</li>
  * </ul>
  *
- * <p>com.morningforge.sentenceoriser.PagerAdapter is more general than the adapters used for
+ * <p>PagerAdapter is more general than the adapters used for
  * {@link android.widget.AdapterView AdapterViews}. Instead of providing a
  * View recycling mechanism directly ViewPager uses callbacks to indicate the
- * steps taken during an update. A com.morningforge.sentenceoriser.PagerAdapter may implement a form of View
+ * steps taken during an update. A PagerAdapter may implement a form of View
  * recycling if desired or use a more sophisticated method of managing page
  * Views such as Fragment transactions where each page is represented by its
  * own Fragment.</p>
  *
  * <p>ViewPager associates each page with a key Object instead of working with
  * Views directly. This key is used to track and uniquely identify a given page
- * independent of its position in the adapter. A call to the com.morningforge.sentenceoriser.PagerAdapter method
+ * independent of its position in the adapter. A call to the PagerAdapter method
  * {@link #startUpdate(ViewGroup)} indicates that the contents of the ViewPager
  * are about to change. One or more calls to {@link #instantiateItem(ViewGroup, int)}
  * and/or {@link #destroyItem(ViewGroup, int, Object)} will follow, and the end
@@ -60,14 +61,14 @@ import android.view.ViewGroup;
  * should be removed. The method {@link #isViewFromObject(View, Object)} identifies
  * whether a page View is associated with a given key object.</p>
  *
- * <p>A very simple com.morningforge.sentenceoriser.PagerAdapter may choose to use the page Views themselves
+ * <p>A very simple PagerAdapter may choose to use the page Views themselves
  * as key objects, returning them from {@link #instantiateItem(ViewGroup, int)}
  * after creation and adding them to the parent ViewGroup. A matching
  * {@link #destroyItem(ViewGroup, int, Object)} implementation would remove the
  * View from the parent ViewGroup and {@link #isViewFromObject(View, Object)}
  * could be implemented as <code>return view == object;</code>.</p>
  *
- * <p>com.morningforge.sentenceoriser.PagerAdapter supports data set changes. Data set changes must occur on the
+ * <p>PagerAdapter supports data set changes. Data set changes must occur on the
  * main thread and must end with a call to {@link #notifyDataSetChanged()} similar
  * to AdapterView adapters derived from {@link android.widget.BaseAdapter}. A data
  * set change may involve pages being added, removed, or changing position. The
@@ -220,7 +221,7 @@ public abstract class PagerAdapter {
     /**
      * Determines whether a page View is associated with a specific key object
      * as returned by {@link #instantiateItem(ViewGroup, int)}. This method is
-     * required for a com.morningforge.sentenceoriser.PagerAdapter to function properly.
+     * required for a PagerAdapter to function properly.
      *
      * @param view Page View to check for association with <code>object</code>
      * @param object Object to check for association with <code>view</code>

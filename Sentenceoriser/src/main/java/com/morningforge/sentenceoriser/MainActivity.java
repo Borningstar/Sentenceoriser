@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -117,7 +117,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         mViewPager = (CustomViewPager) findViewById(R.id.pager);
       //  mViewPager.setPivotX(0);
       //  mViewPager.setPivotY(0);
-       // mViewPager.setRotation(90f);
+      //  mViewPager.setRotation(90f);
+
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         mViewPager.setPageTransformer(true, new DepthPageTransformer());
